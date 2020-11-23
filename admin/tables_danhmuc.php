@@ -51,7 +51,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng- bác sĩ</span></a>
+         <span>Quản lý người dùng - nha khoa</span></a>
       </li>
 
       <!-- Divider -->
@@ -349,7 +349,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Bản quyền &copy;trang web 2020</span>
+            <span>Bản quyền &copy;trang web 2019</span>
           </div>
         </div>
       </footer>

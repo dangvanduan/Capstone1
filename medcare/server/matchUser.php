@@ -23,9 +23,9 @@
 		$_SESSION['create_date'] = $rows['create_date'];
 		$_SESSION['role'] = $rows['role'];
 		if ( $_SESSION['role']==2) {
-			$_SESSION['doctor_degree_name'] = $rows['doctor_degree_name'];
-			$_SESSION['doctor_degree_major'] = $rows['doctor_degree_major'];
-			$_SESSION['doctor_degree_provider'] = $rows['doctor_degree_provider'];
+			$_SESSION['dental_address'] = $rows['dental_address'];
+			$_SESSION['categorize'] = $rows['categorize'];
+			$_SESSION['open_time'] = $rows['open_time'];
 			$_SESSION['doctor_degree_date'] = $rows['doctor_degree_date'];
 			header('Location: http://localhost/medcare/index.php');
 		}
