@@ -69,37 +69,37 @@
                       echo '<script>alert("Vui lòng nhập ngày tạo !")</script>';
                     }
                 }
-                if(isset($_POST['doctor_degree'])){
-                  $doctor_degree = $_POST['doctor_degree'];
-                  if(empty(addslashes(trim($doctor_degree))))
+                if(isset($_POST['dental_address'])){
+                  $dental_address = $_POST['dental_address'];
+                  if(empty(addslashes(trim($dental_address))))
                     {
-                      echo '<script>alert("Vui lòng nhập trình độ !")</script>';
+                      echo '<script>alert("Vui lòng nhập địa chỉ !")</script>';
                     }
                 }
-                if(isset($_POST['create_degree'])){
-                  $create_degree = $_POST['create_degree'];
-                  if(empty(addslashes(trim($create_degree))))
+                if(isset($_POST['doctor_degree_date'])){
+                  $doctor_degree_date = $_POST['doctor_degree_date'];
+                  if(empty(addslashes(trim($doctor_degree_date))))
                     {
-                      echo '<script>alert("Vui lòng nhập ngày cấp !")</script>';
+                      echo '<script>alert("Vui lòng nhập ngày cấp bằng !")</script>';
                     }
                 }
-                if(isset($_POST['place_degree'])){
-                  $place_degree = $_POST['place_degree'];
-                  if(empty(addslashes(trim($place_degree))))
+                if(isset($_POST['categorize'])){
+                  $categorize = $_POST['categorize'];
+                  if(empty(addslashes(trim($categorize))))
                     {
-                      echo '<script>alert("Vui lòng nhập nơi cấp !")</script>';
+                      echo '<script>alert("Vui lòng nhập hình thức kinh doanh !")</script>';
                     }
                 }
-                if(isset($_POST['major'])){
-                  $major = $_POST['major'];
-                  if(empty(addslashes(trim($major))))
+                if(isset($_POST['open_time'])){
+                  $open_time = $_POST['open_time'];
+                  if(empty(addslashes(trim($open_time))))
                     {
-                      echo '<script>alert("Vui lòng nhập chuyên khoa !")</script>';
+                      echo '<script>alert("Vui lòng nhập giờ hoạt động !")</script>';
                     }
                 }
-                 $sql_them = "INSERT INTO user(user_id,user_name,email,password,phone,role,create_date,doctor_degree_name,doctor_degree_date,
-                 doctor_degree_provider,doctor_degree_major,status) 
-                 VALUES('','$name','$email','$password','$phone',$role,'$create_date','$doctor_degree','$create_degree','$place_degree','$major',1)";
+                 $sql_them = "INSERT INTO user(user_id,user_name,email,password,phone,role,create_date,dental_address,doctor_degree_date,
+                 categorize,open_time,status) 
+                 VALUES('','$name','$email','$password','$phone',$role,'$create_date','$dental_address','$doctor_degree_date','$categorize','$open_time',1)";
                  $query_add = mysqli_query($conn,$sql_them);
                  if($query_add)
                  {
@@ -147,7 +147,7 @@
                     <input type="date" class="form-control form-control-user" id="exampleDateStart" placeholder="Ngày tạo tài khoản" name="create_date">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleStudy" placeholder="Bằng cấp" name="doctor_degree">
+                    <input type="text" class="form-control form-control-user" id="exampleStudy" placeholder="Địa chỉ" name="dental_address">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -161,15 +161,15 @@
                     </select>
                   </div>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control form-control-user" id="exampleDateOff" placeholder="Ngày cấp" name="create_degree"> 
+                    <input type="date" class="form-control form-control-user" id="exampleDateOff" placeholder="Ngày cấp bằng" name="doctor_degree_date"> 
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleSpace" placeholder="Nơi cấp" name="place_degree">
+                    <input type="text" class="form-control form-control-user" id="exampleSpace" placeholder="Hình thức" name="categorize">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleSubject" placeholder="Chuyên khoa" name="major">
+                    <input type="text" class="form-control form-control-user" id="exampleSubject" placeholder="Giờ hoạt động" name="open_time">
                   </div>
                 </div>
                   

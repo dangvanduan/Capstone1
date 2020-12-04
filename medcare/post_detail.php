@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Sức khỏe Việt Nam</title>
+    <title>Chi tiết</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap1.css">
     <link rel="stylesheet" href="css/themify-icons.css">

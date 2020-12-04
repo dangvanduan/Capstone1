@@ -6,7 +6,7 @@
 	}
 	
 
-	$sql11="select qa_id,qa_title,category_id,qa_content,qa.user_id,parent_id,qa.create_date, user_name, email, topic, climate, patience from qa, user where parent_id = 0 and user.user_id=qa.user_id order by qa_id DESC";
+	$sql11="select qa_id,qa_title,category_id,qa_content,qa.user_id,parent_id,qa.create_date, user_name, email, topic, climate, patience from qa, user where parent_id = 0 and user.user_id=qa.user_id order by qa_id ASC";
 	function getanswers1($parent_id){
 		global $connect;
 		$number=0;
@@ -22,10 +22,10 @@
 	$result1 = mysqli_query($connect,$sql11);
 
 	class Qa1{
-		function Qa1($id,$title,$category_id,$content,$user_id,$parent_id,$create_date,$user_name,$answer,$email,$topic, $climate, $patience){
+		function Qa1($id,$keyInput,$arrIdResult,$content,$user_id,$parent_id,$create_date,$user_name,$answer,$email,$topic, $climate, $patience){
 			$this->id=$id;
-			$this->title=$title;
-			$this->category_id=$category_id;
+			$this->title=$keyInput;
+			$this->category_id=$arrIdResult;
 			$this->content=$content;
 			$this->user_id=$user_id;
 			$this->parent_id=$parent_id;

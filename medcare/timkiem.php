@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Sức khỏe Việt Nam</title>
+    <title>Kết quả tìm kiếm</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -36,14 +36,14 @@
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
-                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a>
                         </li>
                         <li>
-                            <a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
+                            <a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a>
                         </li>
                     </ul>	
                 </div>
@@ -103,6 +103,12 @@
                 <div style="margin-top: 15px; margin-bottom: 50px;">
                     <?php //return value Search
                      $key = $_GET['key'];
+                            if($key==0)
+                            {
+                                echo 'Khong tim thay ket qua';
+                                
+                            }
+                            else{
                             $text= '<h3><span style="color: black">Kết quả: </span><span style="color:blue;font-size:25px;"><i>'.$key.'</i></span><h3>';
                             
                             echo $text;
@@ -113,7 +119,9 @@
                             $target .= is_null($patience)?"":'<span>Đối tượng: '.ucfirst($patience).'</span> ';
                             //$text1='<h3 style="color:purple;margin-top:25px"><u>'.$target.'</u></h3>';
                             echo '<div style="color:white;margin-top:25px" class="object">'.$target.'</div>';
+                            }
                  ?>
+               
                 </div>
                <div class="area-headin row">
                     <div class="col-md-5 col-xl-4">

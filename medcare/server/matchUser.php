@@ -5,6 +5,10 @@
 	{
 		return $result ? mysqli_fetch_assoc($result) : 0 ;
 	}
+	function mysqli_num_row($result)
+	{
+		return $result ? mysqli_fetch_assoc($result) : 0 ;
+	}
 
 	$id=$_POST['username'];
 	$pass=$_POST['pass'];
@@ -12,6 +16,16 @@
 
 	$passEncode=md5($pass);
 
+	$query= "select * from user where username = '$id'";
+	$re=mysqli_query($connect,$query);
+	$count = mysqli_num_rows($re); 
+    if($count!=0){ 
+		$mess="Tài khoản đã tồn tại, vui lòng chọn tài khoản khác";
+		header('Location: http://localhost/medcare/Login/signup.php?signupFail');
+		
+   
+	} 
+	else { 
 	$sql= "select  * from user where email = '$id'  and password = '$passEncode'";
 	$result= mysqli_query($connect,$sql);
 	$rows = getRows($result);
@@ -44,4 +58,6 @@
 		header('Location: http://localhost/medcare/Login/signin.php?signinFail');
 		
 	}
+}
+	
  ?>

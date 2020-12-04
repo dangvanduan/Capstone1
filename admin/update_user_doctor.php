@@ -51,20 +51,20 @@
                 if(isset($_POST['create_date'])){
                   $create_date = $_POST['create_date'];
                 }
-                if(isset($_POST['doctor_degree'])){
-                  $doctor_degree = $_POST['doctor_degree'];
+                if(isset($_POST['dental_address'])){
+                  $dental_address = $_POST['dental_address'];
                 }
-                if(isset($_POST['create_degree'])){
-                  $create_degree = $_POST['create_degree'];
+                if(isset($_POST['doctor_degree_date'])){
+                  $doctor_degree_date = $_POST['doctor_degree_date'];
                 }
-                if(isset($_POST['place_degree'])){
-                  $place_degree = $_POST['place_degree'];
+                if(isset($_POST['categorize'])){
+                  $categorize = $_POST['categorize'];
                 }
-                if(isset($_POST['major'])){
-                  $major = $_POST['major'];
+                if(isset($_POST['open_time'])){
+                  $open_time = $_POST['open_time'];
                 }
                  $sql_update = "UPDATE user SET email='$email',phone='$phone',password='$password',create_date='$create_date',role=$role,
-                 doctor_degree_name='$doctor_degree',doctor_degree_date ='$create_degree',doctor_degree_provider='$place_degree',doctor_degree_major='$major',status=1 WHERE user_name='$name'";
+                 dental_address='$dental_address',doctor_degree_date ='$doctor_degree_date',categorize='$categorize',open_time='$open_time',status=1 WHERE user_name='$name'";
                  $query_update = mysqli_query($conn,$sql_update);
               //   echo $sql_update;
                  if($query_update)
@@ -123,7 +123,7 @@
                     <input type="date" class="form-control form-control-user" id="exampleDateStart" placeholder="Ngày tạo tài khoản" name="create_date">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleStudy" placeholder="Bằng cấp" name="doctor_degree">
+                    <input type="text" class="form-control form-control-user" id="exampleStudy" placeholder="Địa chỉ" name="dental_address">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -135,15 +135,15 @@
                       
                     </select>
                   <div class="col-sm-6">
-                    <input type="date" class="form-control form-control-user" id="exampleDateOff" placeholder="Ngày cấp" name="create_degree"> 
+                    <input type="date" class="form-control form-control-user" id="exampleDateOff" placeholder="Ngày cấp bằng" name="doctor_degree_date"> 
                   </div>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleSpace" placeholder="Nơi cấp" name="place_degree">
+                    <input type="text" class="form-control form-control-user" id="exampleSpace" placeholder="Hình thức" name="categorize">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleSubject" placeholder="Chuyên khoa" name="major">
+                    <input type="text" class="form-control form-control-user" id="exampleSubject" placeholder="Giờ hoạt động" name="open_time">
                   </div>
                 </div>
                   

@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Sức khỏe Việt Nam</title>
+    <title>Chi tiết tư vấn</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -69,6 +69,7 @@
                                     
                                     <?php if(isset($_SESSION['user_id'])): ?>
                                         <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Đổi mật khẩu</a></li>
                                     <?php else: ?>
                                         <li class="nav-item"><a class="nav-link font" href="Login/signin.php">Đăng nhập</a></li> 
                                     <?php endif; ?>
@@ -98,7 +99,6 @@
                     <?php 
                         $phone = empty($_SESSION['phone'])?"chưa công khai" :$_SESSION['phone'];
                         $role = $_SESSION['role'] ==1?'Khách hàng':'Nha khoa';
-
                              $text='<div class="info">
                                 <div class="x">
                                     <span>Loại tài khoản: '.$role.'</span> 
@@ -134,6 +134,7 @@
                              }
                              $text= $text.'</div>';
                              echo $text;  
+                            
                      ?> 
                      <div class="business">
                         <div class="row">

@@ -26,7 +26,7 @@
  <script  language="javascript">
   function show(){
 
-     var a = ['answer0','answer1','answer2','answer3','answer4'];
+     var a = ['answer0','answer1','answer2','answer3','answer4','answer5'];
      
      for (var i = 0; i < a.length; i++) {
 
@@ -382,7 +382,7 @@
                 </div>
             </div>
             <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanNhaKhoa.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanNhaKhoa.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
                 <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
@@ -419,9 +419,7 @@
         <?php if(isset($_GET['QAadded'])): ?>
             alert('Đặt câu hỏi thành công');
         <?php elseif(isset($_GET['QAadded1'])): ?>
-            alert('Câu hỏi này đã tồn tại, hãy xem câu trả lời!');
-        <?php elseif(isset($_GET['NotAdd1'])||isset($_GET['NotAdd2'])): ?>
-            
+            alert('Câu hỏi này đã tồn tại, hãy xem câu trả lời!');          
         <?php endif; ?>
     </script>
 </body>

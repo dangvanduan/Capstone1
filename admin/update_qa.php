@@ -61,7 +61,7 @@ include('connsql.php');
                    {
                      header('location: tables_cauhoi.php');
                     }
-                    else echo "update k thanh cong";
+                    else echo "update khong thanh cong";
                 }
                echo $c;
 

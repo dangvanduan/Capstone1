@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-md-8 col-lg-6 col-xl-5">
 
-                    <h1 style="">Vì tầm vóc Việt Nam<br>
+                    <h1 style="">Vì nụ cười Việt Nam<br>
                     chúng tôi luôn ở đây</h1>
 
                     <p>Đội ngũ nha sĩ nhiệt tình, dày kinh nghiệm sẽ giúp bạn tìm giải quyết mọi vấn đề về sức khỏe răng miệng, hãy gia nhập cộng đồng của chúng tôi để được chăm sóc, học hỏi và chia sẻ mọi lúc mọi nơi.</p>
@@ -187,11 +187,11 @@
         <div class="container">
             <div class="area-headin row">
                 <div class="col-md-8 col-xl-6">
-                    <h3>Sức khỏe là vàng<br>
+                    <h3>Vì nụ cười của hàng triệu người dân Việt Nam<br>
                     </h3>
                 </div>
                 <div class="col-md-4 col-xl-6">
-                    <p style="font-size: 14px">Chúng tôi không biết bạn là ai nhưng khi bạn đã ở đây, tôi biết chúng ta có cùng 1 kẻ thù (ảnh minh họa)</p>
+                    <!-- <p style="font-size: 14px">Chúng tôi không biết bạn là ai nhưng khi bạn đã ở đây, tôi biết chúng ta có cùng 1 kẻ thù (ảnh minh họa)</p> -->
                 </div>
             </div>
 
@@ -284,7 +284,7 @@
                 </div>
             </div>
             <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa@gmail.com</a>
                 <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
