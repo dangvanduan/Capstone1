@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Sức khỏe Việt Nam</title>
+    <title>Trang chủ</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -30,13 +30,13 @@
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
                        
-                        <li><a href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i>Facebook</a></li>
-                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>Skype</li>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a></li>
+                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a></li>
                     </ul>	
                 </div>
             </div>	
@@ -49,7 +49,7 @@
                     <!-- Brand and toggle get grouped for better mobile display -->
                      <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
                      <form action="timkiem.php" method="GET">
-                    <input type="text" class="search-box" placeholder= "vd: bệnh sưng nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
+                    <input type="text" class="search-box" placeholder= "vd: viêm nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
                         <input type="submit" value="Tìm" style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
                      </form>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -60,7 +60,7 @@
                             <li class="nav-item"><a class="nav-link font" href="doctors.php">Nha khoa</a></li>    
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
-                            </li> 
+                            </li>                            
                             <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
                            <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
@@ -96,7 +96,7 @@
                     <h1 style="">Vì tầm vóc Việt Nam<br>
                     chúng tôi luôn ở đây</h1>
 
-                    <p>Đội ngũ bác sĩ nhiệt tình, dày kinh nghiệm sẽ giúp bạn tìm giải quyết mọi vấn đề về sức khỏe, hãy gia nhập cộng đồng của chúng tôi để được chăm sóc, học hỏi và chia sẻ mọi lúc mọi nơi.</p>
+                    <p>Đội ngũ nha sĩ nhiệt tình, dày kinh nghiệm sẽ giúp bạn tìm giải quyết mọi vấn đề về sức khỏe răng miệng, hãy gia nhập cộng đồng của chúng tôi để được chăm sóc, học hỏi và chia sẻ mọi lúc mọi nơi.</p>
                     <!-- <a href="" onclick="click()" class="main_btn">Đặt vấn đề</a> -->
                     <button class="main_btn" id="btn"><a href="hoidap.php" style="color: yellow">Đặt vấn đề</a></button>
                 </div>
@@ -163,7 +163,7 @@
                 		$text= '<div class="col-md-6 col-lg-4">
 				                    <a href="post_detail.php?qa_id='.$arr1[$i]->id.'"><div class="card-service text-center text-lg-left mb-4 mb-lg-0" style="height: 370px;    background: #f8f9fa;">
 				                        <span class="card-service__icon" style="font-weight:bold;">'.$name.'</span>
-				                        <p><a class="user_email" style="font-weight:bold;" href="mailto:'.$arr1[$i]->email.'">'.$arr1[$i]->email.'</a></p>
+				                        <p><a class="user_email" style="font-weight:bold;" href="mailto:'.$arr1[$i]->email.'">'.$arr1[$i]->email.'</a></p> 
 				                         <a href="post_detail.php?qa_id='.$arr1[$i]->id.'"><h3 class="card-service__title">'.$arr1[$i]->title.'</h3></a>
 				                        <p class="card-service__subtitle">'.$content.'</p>
 				                         <div class="card-interaction">
@@ -214,6 +214,7 @@
                             </div>
                             <div class="team-footer d-flex justify-content-between" style="margin-top:-25px;">
                                   <p>Email: <a class="user_email" href="mailto:'.$arr[$i]->email.'">'.$arr[$i]->email.'</a></p>
+                                  
                                 </div> 
                             </div>
                         </div>';
@@ -276,15 +277,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>Điên thoại tu vấn 24/7</h2>
+                        <h2>Điên thoại tư vấn 24/7</h2>
                         <span>(034)-7927070</span>
                         <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và cùng bạn đánh bại chúng</p>
                     </div>
                 </div>
             </div>
             <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
-                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
+                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
      </section>
@@ -295,7 +296,7 @@
 
 <div class="footer" style="text-align: center; margin-bottom: 20px;">
 	<hr>
-	 Dịch vụ được hoàn hiện bởi | <a href="#" target="_blank">Lê Văn Tự</a>
+	 Dịch vụ được hoàn hiện bởi | <a href="#" target="_blank">Team C1SE13</a>
 </div>
 
 

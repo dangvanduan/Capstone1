@@ -40,7 +40,7 @@
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
-                        <li><a href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                         </li>
                         <li>
                             <a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
@@ -55,9 +55,9 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/quan.png" alt="">Sức khỏe</a>
+                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
                      <form action="timkiem.php" method="GET">
-                    <input type="text" class="search-box" placeholder= "vd: bệnh viêm da mủ..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
+                    <input type="text" class="search-box" placeholder= "vd: viêm nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
                         <input type="submit" value="Tìm" style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
                      </form>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -65,7 +65,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                            <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li> 
                             
-                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Bác sĩ</a></li>    
+                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>    
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
@@ -236,7 +236,7 @@
 
 <div class="footer" style="text-align: center; margin-bottom: 20px;">
     <hr>
-     Dịch vụ được hoàn hiện bởi | <a href="#" target="_blank">Lê Văn Tự</a>
+    
 </div>
 
 

@@ -51,7 +51,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng- bác sĩ</span></a>
+         <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
       <!-- Divider -->

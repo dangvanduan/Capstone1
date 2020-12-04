@@ -51,7 +51,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng- bác sĩ</span></a>
+         <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -307,7 +307,7 @@
                       <th>ID danh mục</th>
                       <th>ID câu hỏi cha</th>
                       <th>Tiêu đề câu hỏi</th>
-                      <th>Nội dung câu trả lời</th>
+                      <th>Nội dung</th>
                       <th>Lượt thích</th>
                       <th>Ngày tạo</th>
                       <th>Status</th> 

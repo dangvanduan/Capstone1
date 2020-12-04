@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Hỏi Đáp</title>
+    <title>Hỏi Đáp cùng chuyên gia</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap3.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -48,13 +48,13 @@
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
                        
-                        <li><a href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a></li>
-                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a></li>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a></li>
+                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a></li>
                     </ul>   
                 </div>
             </div>  
@@ -65,9 +65,9 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/quan.png" alt="">Sức khỏe</a>
+                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
                      <form action="timkiem.php" method="GET">
-                    <input type="text" class="search-box" placeholder= "vd: bệnh viêm da mủ..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
+                    <input type="text" class="search-box" placeholder= "vd: viêm nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
                         <input type="submit" value="Tìm" style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
                      </form>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,7 +75,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li> 
                             
-                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Bác sĩ</a></li>    
+                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>    
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
@@ -292,7 +292,7 @@
                         <div class="appointment-form">
                             <h3>Vấn đề của bạn</h3>
                             <?php
-                            $sql = "SELECT * FROM categoty ORDER BY category_name ASC";
+                            $sql = "SELECT * FROM categoty";
                               $query = mysqli_query($connect,$sql);
                                ?>
                             <form action="server/addQuestion.php" method="GET">
@@ -382,14 +382,14 @@
                 </div>
             </div>
             <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
-                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanNhaKhoa.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
+                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
      </section>
     <div class="footer" style="text-align: center; margin-bottom: 20px;">
         <hr>
-         Dịch vụ được hoàn hiện bởi | <a href="#" target="_blank">Lê Văn Tự</a>
+         
     </div>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               
@@ -420,7 +420,8 @@
             alert('Đặt câu hỏi thành công');
         <?php elseif(isset($_GET['QAadded1'])): ?>
             alert('Câu hỏi này đã tồn tại, hãy xem câu trả lời!');
-      
+        <?php elseif(isset($_GET['NotAdd1'])||isset($_GET['NotAdd2'])): ?>
+            
         <?php endif; ?>
     </script>
 </body>

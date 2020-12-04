@@ -52,7 +52,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng-bác sĩ</span></a>
+         <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
       <!-- Divider -->
@@ -361,11 +361,11 @@
                       <th>Số điện thoại</th>
                       <th>Password</th>
                       <th>Ngày tạo tài khoản</th>
-                      <th>Bằng</th>
+                      <th>Địa chỉ</th>
                       <th>Phân quyền</th>
                       <th>Ngày cấp</th>
-                      <th>Nơi cấp</th>
-                      <th>Chuyên khoa</th>
+                      <th>Hình thức</th>
+                      <th>Giờ hoạt động</th>
                       <th>Status</th>
                       <th></th>
                     </tr>
@@ -379,9 +379,9 @@
                         <td><?php echo $row['password'];?></td>
                         <td><?php echo $row['create_date'];?></td>
                         <td><?php echo $row['dental_address'];?></td>
-                        <td><?php $role= $row['role']; if($role==1) echo "người dùng";
-                        else if($role==2) echo "bác sĩ";
-                        else if($role==3) echo "quản lý";?></td>
+                        <td><?php $role= $row['role']; if($role==1) echo "Người dùng";
+                        else if($role==2) echo "Nha khoa";
+                        else if($role==3) echo "Quản lí";?></td>
                         <td><?php echo $row['doctor_degree_date'];?></td>
                         <td><?php echo $row['categorize'];?></td>
                         <td><?php echo $row['open_time'];?></td>

@@ -31,13 +31,13 @@
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
                        
-                        <li><a href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a></li>
-                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a></li>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a></li>
+                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a></li>
                     </ul>	
                 </div>
             </div>	
@@ -48,9 +48,9 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/quan.png" alt="">Sức khỏe</a>
+                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
                      <form action="timkiem.php" method="GET">
-                    <input type="text" class="search-box" placeholder= "vd: bệnh viêm da mủ..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
+                    <input type="text" class="search-box" placeholder= "vd: viêm nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
                         <input type="submit" value="Tìm" style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
                      </form>
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,7 +58,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                            <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li> 
                             
-                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Bác sĩ</a></li>    
+                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>    
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
@@ -97,7 +97,7 @@
                 <div style="margin-top: -15px;margin: 0px auto;">
                     <?php 
                         $phone = empty($_SESSION['phone'])?"chưa công khai" :$_SESSION['phone'];
-                        $role = $_SESSION['role'] ==1?'Thành viên':'Bác sĩ tư vấn';
+                        $role = $_SESSION['role'] ==1?'Khách hàng':'Nha khoa';
 
                              $text='<div class="info">
                                 <div class="x">
@@ -120,16 +120,16 @@
                                 </div>';
                              if( $_SESSION['role'] ==2){
                                 $text= $text.'<div class="x">
-                                                    <span>Loại bằng: '.$_SESSION['doctor_degree_name'].'</span> 
+                                                    <span>Địa chỉ: '.$_SESSION['dental_address'].'</span> 
                                                 </div>
                                                 <div class="x">
-                                                    <span>Chuyên khoa: '.$_SESSION['doctor_degree_major'].'</span> 
+                                                    <span>Hình thức: '.$_SESSION['categorize'].'</span> 
                                                 </div>
                                                  <div class="x">
                                                     <span>Ngày cấp: '.$_SESSION['doctor_degree_date'].'</span>
                                                 </div>
                                                 <div class="x">
-                                                    <span>Nơi cấp: '.$_SESSION['doctor_degree_provider'].'</span> 
+                                                    <span>Giờ hoạt động: '.$_SESSION['open_time'].'</span> 
                                                 </div>';
                              }
                              $text= $text.'</div>';
@@ -176,14 +176,14 @@
                 </div>
             </div>
             <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
-                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/tuvansuckhoe24h.com.vn/"><i class="ti-facebook"></i></a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
+                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
      </section>
     <div class="footer" style="text-align: center; margin-bottom: 20px;">
     <hr>
-     Dịch vụ được hoàn hiện bởi nhóm 1 | <a href="#" target="_blank">Pham Hồng Quân , Lê Thị Hoa, Lê Văn Tự</a>
+ 
 </div>
 <!-- ====================================FOOTER -->
 
