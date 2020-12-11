@@ -5,6 +5,10 @@
 	{
 		return $result ? mysqli_fetch_assoc($result) : 0 ;
 	}
+	function mysqli_num_row($result)
+	{
+		return $result ? mysqli_fetch_assoc($result) : 0 ;
+	}
 
 	$id=$_POST['username'];
 	$pass=$_POST['pass'];
@@ -12,6 +16,16 @@
 
 	$passEncode=md5($pass);
 
+	$query= "select * from user where username = '$id'";
+	$re=mysqli_query($connect,$query);
+	$count = mysqli_num_rows($re); 
+    if($count!=0){ 
+		$mess="Tài khoản đã tồn tại, vui lòng chọn tài khoản khác";
+		header('Location: http://localhost/medcare/Login/signup.php?signupFail');
+		
+   
+	} 
+	else { 
 	$sql= "select  * from user where email = '$id'  and password = '$passEncode'";
 	$result= mysqli_query($connect,$sql);
 	$rows = getRows($result);
@@ -23,10 +37,10 @@
 		$_SESSION['create_date'] = $rows['create_date'];
 		$_SESSION['role'] = $rows['role'];
 		if ( $_SESSION['role']==2) {
-			$_SESSION['doctor_degree_name'] = $rows['doctor_degree_name'];
-			$_SESSION['doctor_degree_major'] = $rows['doctor_degree_major'];
-			$_SESSION['doctor_degree_provider'] = $rows['doctor_degree_provider'];
-			$_SESSION['doctor_degree_date'] = $rows['doctor_degree_date'];
+			$_SESSION['dental_address'] = $rows['dental_address'];
+			$_SESSION['categorize'] = $rows['categorize'];
+			$_SESSION['open_time'] = $rows['open_time'];
+			$_SESSION['link'] = $rows['link'];
 			header('Location: http://localhost/medcare/index.php');
 		}
 		// if (p==0) {
@@ -44,4 +58,6 @@
 		header('Location: http://localhost/medcare/Login/signin.php?signinFail');
 		
 	}
+}
+	
  ?>

@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Đăng Ký</title>
+	<title>Đổi mật khẩu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -34,53 +35,42 @@
 		<a style="font-size: 20px; color: purple; margin-top: 40px; margin-left: 120px;" class="navbar-brand logo_h" href="../index.php"><img src="../img/quan.png" alt="">Trang chủ</a>
 		<div class="container-login100" style="margin-top: -60px;">
 			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="../server/addAccount.php">
+				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="../server/newpass.php"; id="formChangePass">
 					<span class="login100-form-title p-b-51">
-						Sign Up
+                     Change the password
 					</span>
-
 					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" placeholder="Username">
-						<span class="focus-input100"></span>
-					</div>		
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100"></span>											
-					</div>
-					<i>(Mật khẩu phải có tối thiểu 8 ký tự, chữ hoa và một số)</i>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Email is required">
-						<input class="input100" type="Email" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Old password is required">
+						<input class="input100" type="password" name="pass" placeholder="Old password">
 						<span class="focus-input100"></span>
 					</div>
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Phone is required">
-						<input class="input100" type="phone" name="phone" placeholder="Phone Number">
+					
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "New password is required">
+						<input class="input100" type="password" name="new_pass" placeholder="New Password">
 						<span class="focus-input100"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate = " Enter a new password is required">
+						<input class="input100" type="password" name="re_new_pass" placeholder="Enter a new Password">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="flex-sb-m w-full p-t-3 p-b-24">
+						<div>
+							<a href="signup.php" class="txt1">
+								
+							</a>
+						</div>
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Sign Up
+						<button class="login100-form-btn" type="submit" name="submit">
+							Submit
 						</button>
-					</div>
-					<?php
-						$mess="";
-						if(isset($_GET['signupFail'])){
-							$mess="Tài khoản đã tồn tại, vui lòng chọn tài khoản khác";
-						}else
-						{
-							$mess=" ";
-							
-						}
-						
-							$text = '<div style = "margin-top: 10px;">
-							<p style="color: red; font-size : 13px;">'.$mess.'</p>
-						</div>';
-						echo $text;
-						
-					  ?>
-					
+					</div>					
 				</form>
+				
 			</div>
 		</div>
 	</div>

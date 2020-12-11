@@ -1,6 +1,6 @@
 <?php 
 	require 'connect.php';
-	 require 'getCategory.php';
+	require 'getCategory.php';
 	if (!isset($_SESSION['user_id'])) {
 		header('Location: http://localhost/medcare/Login/signin.php?no_account');
 		die;

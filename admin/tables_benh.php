@@ -51,7 +51,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng- bác sĩ</span></a>
+         <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
        <li class="nav-item">
@@ -273,7 +273,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Đặng Văn Duẫn</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
           
@@ -339,7 +339,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Bản quyền &copy;trang web 2019</span>
+            <span>Dịch vụ được hoàn thiện bởi Team C1SE13</span>
           </div>
         </div>
       </footer>

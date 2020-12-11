@@ -1,14 +1,14 @@
 <?php 
     require 'server/connect.php';
  ?>
-<!doctype html>
-<html lang="en">
-<head>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Chi tiết tin tức</title>
+    <title>Thông tin nha khoa</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
@@ -21,21 +21,20 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/styleCustom.css">
     <link rel="stylesheet" href="css/font.css">
-</head>
-<body>
-
-    <!--================Header Menu  =================-->
+ </head>
+ <body>
+     <!--================Header Menu  =================-->
 
      <header class="header_area">
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
-                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a></li>
-                        <li><a href="https://www.skype.com/en/features/skype-web/"><i class="ti-skype"></i></a></li>
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>Facebook</li>
+                        <li><a href="https://www.skype.com/en/features/skype-web/"><i class="ti-skype"></i></a>Skype</li>
                     </ul>   
                 </div>
             </div>  
@@ -86,62 +85,64 @@
     </header>
     <!--================Header Menu Area =================-->
 
-
     <!--================Home Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container" style="margin-top: 70px">
                 <div
-                class="banner_content d-md-flex justify-content-between align-items-center"
-                >
+                class="banner_content d-md-flex justify-content-between align-items-center">
                 <div class="mb-3 mb-md-0">
-                    <h2>Chi Tiết Tin Tức</h2>
+                    <h2>Chi tiết Nha Khoa</h2>
                     <!-- <p>Belding years moveth earth green behold wherein</p> -->
                 </div>
-                
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!--================End Home Banner Area =================-->
+    </section>
+    <!--================End Home Banner Area =================-->
 
-
-<!--================Blog Area =================-->
-<section class="blog_area single-post-area area-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 posts-list">
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area area-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
                
-                    <?php include("server/getDetailNew.php"); 
+                    <?php 
+                    include("server/getDental.php"); 
+                    // $txt='<div class="feature-img row" style="margin-top:-30px;">
+                    // <h3 style="font-size:22px">'.$arr[0]->title.'</h3>
+                    //             <img class="img-fluid" src="'.$arr[0]->source.'" alt="">
+                    //         </div>
+                    //         <div class="single-blog">
+                    //             <div class="_details">                                   
+                    //                 <p style="font-size: 16px;">'.$arr[0]->content.'</p>
+                    //             </div>
+                    //         </div>';
+                    foreach($arrDental as $key => $value){
                      $txt='
                          <div class="row">
                          <div class="col-md-2">
                              
                          </div>
-                              <h3 class="col-md-8" style="font-size:22px">'.$arr[0]->title.'</h3>
+                              <h3 class="col-md-8" style="font-size:22px">'.$arr[0]->dental_name.'</h3>
 
                          </div>
+                         
                          <div class="row">
                           <div class="col-md-2">
                              
                          </div>
-                             <img class="img-fluid col-md-8" src="'.$arr[0]->source.'" alt="">
-                              
-                         </div>
-                         <div class="row">
-                          <div class="col-md-2">
-                             
-                         </div>
-                             <p class="col-md-8" style="font-size: 16px;">'.$arr[0]->content.'</p>
+                             <p class="col-md-8" style="font-size: 16px;">'.$arr[0]->dental_address.'</p>
                          </div>
                           ';
                         echo  $txt;
+                    }
                     ?>
-<!--  -->
-</div>
-</div>
-</section>
- <section class="hotline-area text-center area-padding" style="margin-bottom: 30px;">
+            </div>
+        </div>
+    </section>
+    <!---->
+    <section class="hotline-area text-center area-padding" style="margin-bottom: 30px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -152,17 +153,11 @@
             </div>
         </div>
         <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
-                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
-                <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
+                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a>
+                <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a>
             </div>
     </section>
-    <div class="footer" style="text-align: center; margin-bottom: 20px;">
-        <hr>
-         
-    </div>
-    <!-- ================ Hotline Area End ================= -->  
-
 
 
     <!-- Optional JavaScript -->
@@ -180,11 +175,5 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/theme.js"></script>
-</body>
-</html>
-
-
-
-
-
-
+ </body>
+ </html>

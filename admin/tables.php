@@ -52,7 +52,7 @@
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-         <span>Quản lý người dùng-bác sĩ</span></a>
+         <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
       <!-- Divider -->
@@ -308,7 +308,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Đặng Văn Duẫn</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -348,7 +348,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Bảng dữ liệu người dùng - bác sĩ</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Bảng dữ liệu người dùng - nha khoa</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -361,11 +361,11 @@
                       <th>Số điện thoại</th>
                       <th>Password</th>
                       <th>Ngày tạo tài khoản</th>
-                      <th>Bằng</th>
+                      <th>Địa chỉ</th>
                       <th>Phân quyền</th>
-                      <th>Ngày cấp</th>
-                      <th>Nơi cấp</th>
-                      <th>Chuyên khoa</th>
+                      <th>Link trang chủ</th>
+                      <th>Hình thức</th>
+                      <th>Giờ hoạt động</th>
                       <th>Status</th>
                       <th></th>
                     </tr>
@@ -379,10 +379,10 @@
                         <td><?php echo $row['password'];?></td>
                         <td><?php echo $row['create_date'];?></td>
                         <td><?php echo $row['dental_address'];?></td>
-                        <td><?php $role= $row['role']; if($role==1) echo "người dùng";
-                        else if($role==2) echo "bác sĩ";
-                        else if($role==3) echo "quản lý";?></td>
-                        <td><?php echo $row['doctor_degree_date'];?></td>
+                        <td><?php $role= $row['role']; if($role==1) echo "Người dùng";
+                        else if($role==2) echo "Nha khoa";
+                        else if($role==3) echo "Quản lí";?></td>
+                        <td><?php echo $row['link'];?></td>
                         <td><?php echo $row['categorize'];?></td>
                         <td><?php echo $row['open_time'];?></td>
                         <td><?php $status= $row['status']; if($status==0) echo "Chưa kích hoạt";
@@ -410,7 +410,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Bản quyền &copy;trang web 2019</span>
+            <span>Dịch vụ được hoàn thiện bởi Team C1SE13</span>
           </div>
         </div>
       </footer>
