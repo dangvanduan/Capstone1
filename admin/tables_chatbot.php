@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -9,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
    <link rel="icon" href="img/favicon.png" type="image/png">
-  <title>Quản lý user</title>
+  <title>Tư Vấn</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,10 +24,10 @@
 <?php 
     include('connsql.php');
     $conn = connectsql();
-    $sql = "SELECT * FROM user ORDER BY user_id";
+    $sql = "SELECT * FROM chatbot ORDER BY id";
     $query = mysqli_query($conn,$sql);
+   
  ?>
- 
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -55,27 +54,12 @@
          <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
-      <!-- Divider -->
-     <!--  <hr class="sidebar-divider"> -->
-
-      <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        Interface
-      </div> -->
-
-      <!-- Nav Item - Pages Collapse Menu -->
        <li class="nav-item">
         <a class="nav-link collapsed" href="tables_danhmuc.php" >
           <i class="fas fa-fw fa-cog"></i>
           <span>Quản lý danh mục</span>
         </a>
-       <!--  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.php">Buttons</a>
-            <a class="collapse-item" href="cards.php">Cards</a>
-          </div>
-        </div> -->
+      
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -84,26 +68,9 @@
           <i class="fas fa-fw fa-wrench"></i>
           <span>Quản lý tin tức</span>
         </a>
-       <!--  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.php">Colors</a>
-            <a class="collapse-item" href="utilities-border.php">Borders</a>
-            <a class="collapse-item" href="utilities-animation.php">Animations</a>
-            <a class="collapse-item" href="utilities-other.php">Other</a>
-          </div>
-        </div> -->
+       
       </li>
 
-      <!-- Divider -->
-      <!-- <hr class="sidebar-divider"> -->
-
-      <!-- Heading -->
-      <!-- <div class="sidebar-heading">
-        Addons
-      </div> -->
-
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
@@ -116,9 +83,7 @@
             <a class="collapse-item" href="register.php">Đăng ký</a>
             <a class="collapse-item" href="forgot-password.php">Quên mật khẩu</a>
             <div class="collapse-divider"></div>
-          <!--   <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.php">404 Page</a>
-            <a class="collapse-item" href="blank.php">Blank Page</a> -->
+          
           </div>
         </div>
       </li>
@@ -136,21 +101,18 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Quản lý tư vấn</span></a>
       </li>
-
-                  <!-- Nav Item - Tables -->
-                  <li class="nav-item">
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
         <a class="nav-link" href="tables_chatbot.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Quản lý ChatBot</span></a>
       </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
         <a class="nav-link" href="tables_history.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Lịch sử ChatBot</span></a>
       </li>
-
 
 
       <!-- Divider -->
@@ -326,26 +288,7 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Đặng Văn Duẫn</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
-              <!-- Dropdown - User Information -->
-              <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
-                </a>
-              </div> -->
+          
             </li>
 
           </ul>
@@ -363,7 +306,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Bảng dữ liệu người dùng - nha khoa</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Bảng dữ liệu ChatBot</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -371,45 +314,23 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Họ và tên</th>
-                      <th>Email</th>
-                      <th>Số điện thoại</th>
-                      <th>Password</th>
-                      <th>Ngày tạo tài khoản</th>
-                      <th>Địa chỉ</th>
-                      <th>Phân quyền</th>
-                      <th>Link trang chủ</th>
-                      <th>Hình thức</th>
-                      <th>Giờ hoạt động</th>
-                      <th>Status</th>
+                      <th>Câu hỏi</th>
+                      <th>Trả lời</th>
                       <th></th>
                     </tr>
                   </thead>
-                    <?php while ($row = mysqli_fetch_array($query)) {?>
-                      <tr id="<?php $i=$row['user_id'];echo "$i";?>">
-                        <td><?php echo $row['user_id'];?></td>
-                        <td><?php echo $row['user_name'];?></td>
-                        <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['phone'];?></td>
-                        <td><?php echo $row['password'];?></td>
-                        <td><?php echo $row['create_date'];?></td>
-                        <td><?php echo $row['dental_address'];?></td>
-                        <td><?php $role= $row['role']; if($role==1) echo "Người dùng";
-                        else if($role==2) echo "Nha khoa";
-                        else if($role==3) echo "Quản lí";?></td>
-                        <td><?php echo $row['link'];?></td>
-                        <td><?php echo $row['categorize'];?></td>
-                        <td><?php echo $row['open_time'];?></td>
-                        <td><?php $status= $row['status']; if($status==0) echo "Chưa kích hoạt";
-                        else echo "đã kích hoạt";?></td>
+                   <?php while ($row = mysqli_fetch_array($query)) {?>
+                      <tr>
+                         <td><?php echo $row['id'];?></td>
+                        <td><?php echo $row['queries'];?></td>
+                        <td><?php echo $row['replies'];?></td>
                          <td>
-                          <button type="submit" style="width: 60px;"><a href="add_update_user_doctor.php">Thêm</a></button>
-                          <button type="submit" style="width: 60px;"><a href="update_user_doctor.php">Sửa </a></button>
-                          <button type="submit" style="width: 60px;"><a href="delete_user_doctor.php">Xóa </a></button>
-                         
+                          <button type="submit" style="width: 60px;"><a href="add_update_chatbot.php">Thêm</a></button>
+                          <button type="submit" style="width: 60px;"><a href="update_chatbot.php">Sửa </a></button>
+                          <button type="submit" style="width: 60px;"><a href="delete_chatbot.php">Xóa </a></button>
                         </td>
                       </tr>
-                  <?php } ?>
+                  <?php } mysqli_close($conn);?>
                 </table>
               </div>
             </div>
@@ -435,31 +356,7 @@
     <!-- End of Content Wrapper -->
 
   </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <!-- <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
- -->
-  <!-- Logout Modal-->
- <!--  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.php">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
+ 
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -477,7 +374,7 @@
 
   <!-- Page level custom scripts -->
   <script src="js/demo/datatables-demo.js"></script>
+
 </body>
 
 </html>
-
