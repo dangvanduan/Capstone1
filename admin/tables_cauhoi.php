@@ -103,6 +103,19 @@
           <span>Quản lý tư vấn</span></a>
       </li>
 
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+        <a class="nav-link" href="tables_chatbot.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Quản lý ChatBot</span></a>
+      </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+        <a class="nav-link" href="tables_history.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Lịch sử ChatBot</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

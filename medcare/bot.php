@@ -1,16 +1,14 @@
-<?php 
-    require 'server/connect.php';
- ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Chi tiết tin tức</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="css/bot.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css"> 
@@ -24,25 +22,25 @@
 </head>
 <body>
 
-    <!--================Header Menu  =================-->
-
-     <header class="header_area">
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanSucKhoe.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
-                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a></li>
-                        <li><a href="https://www.skype.com/en/features/skype-web/"><i class="ti-skype"></i></a></li>
+                       
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a></li>
+                        <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a></li>
                     </ul>   
                 </div>
             </div>  
         </div>  
         <!-- =============================MAIN MENU -->
 
-        <div class="main_menu">
+       <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,7 +54,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li> 
                             
-                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nha khoa</a></li>    
+                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>    
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
@@ -92,79 +90,113 @@
 
     <!--================Home Banner Area =================-->
     <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container" style="margin-top: 70px">
-                <div
-                class="banner_content d-md-flex justify-content-between align-items-center"
-                >
-                <div class="mb-3 mb-md-0">
-                    <h2>Chi Tiết Tin Tức</h2>
-                    <!-- <p>Belding years moveth earth green behold wherein</p> -->
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container" style="margin-top: 50px">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+              <h2>ChatBot</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+    <section class="appointment-area area-padding" >
+        <div class="container" >
+        
+    <div class="wrapper">
+        <div class="header">
+            <div class="title">Simple Online Chatbot</div>
+        </div>
+        <div class="form">
+            <div class="bot-inbox inbox">
+                <div class="icon"></div>
+                <div class="msg-header">
+                    <div class="msg-info">
+                        <div class="msg-info-name">ChatBot</div>
+                        <div class="msg-info-time">24/7</div>
+                    </div>
+                    <div class="msg-text">
+                        <p>Xin chào, tôi có thể giúp được gì cho bạn!</p>
+                    </div>
                 </div>
-                
+            </div>
+        </div>
+        <div class="typing-field">
+            <div class="input-data">
+                <input id="data" type="text" placeholder="Xin mời nhập vào đây ..." required>
+                <button id="send-btn">Send</button>
             </div>
         </div>
     </div>
-</section>
-<!--================End Home Banner Area =================-->
+    </div>
+    </section>
 
-
-<!--================Blog Area =================-->
-<section class="blog_area single-post-area area-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 posts-list">
-               
-                    <?php include("server/getDetailNew.php"); 
-                     $txt='
-                         <div class="row">
-                         <div class="col-md-2">
-                             
-                         </div>
-                              <h3 class="col-md-8" style="font-size:22px">'.$arr[0]->title.'</h3>
-
-                         </div>
-                         <div class="row">
-                          <div class="col-md-2">
-                             
-                         </div>
-                             <img class="img-fluid col-md-8" src="'.$arr[0]->source.'" alt="">
-                              
-                         </div>
-                         <div class="row">
-                          <div class="col-md-2">
-                             
-                         </div>
-                             <p class="col-md-8" style="font-size: 16px;">'.$arr[0]->content.'</p>
-                         </div>
-                          ';
-                        echo  $txt;
-                    ?>
-<!--  -->
-</div>
-</div>
-</section>
- <section class="hotline-area text-center area-padding" style="margin-bottom: 30px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Điên thoại tư vấn 24/7</h2>
-                    <span>(034)-7927070</span>
-                    <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và cùng bạn đánh bại chúng</p>
+    <!--================ appointment Area End =================-->
+     <section class="hotline-area text-center area-padding" style="margin-top: 15px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Điên thoại tu vấn 24/7</h2>
+                        <span>(034)-7927070</span>
+                        <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và cùng bạn đánh bại chúng</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanSucKhoe.@gmail.com</a>
+            <div style="margin-top: 5px;">
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanNhaKhoa.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
                 <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
             </div>
-    </section>
+     </section>
     <div class="footer" style="text-align: center; margin-bottom: 20px;">
         <hr>
          
     </div>
-    <!-- ================ Hotline Area End ================= -->  
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              
+    <!-- End footer Area -->
+
+
+    <script>
+        $(document).ready(function(){
+            $("#send-btn").on("click", function(){
+                $value = $("#data").val();
+                $msg = '<div class="user-inbox inbox"><div class="msg-user"><div class="msg-info"><div class="msg-info-time">'+getCurrentTime()+'</div><div class="msg-info-name">User</div></div><div class="msg-text"><p>'+ $value +'</p></div></div><div class="msg-img"></div></div>';
+                $(".form").append($msg);
+                $("#data").val('');
+                
+                // start ajax code
+                $.ajax({
+                    url: 'message.php',
+                    type: 'POST',
+                    data: 'text='+$value,
+                    success: function(result){
+                        $replay = '<div class="bot-inbox inbox"><div class="icon"></div><div class="msg-header"><div class="msg-info"><div class="msg-info-name">ChatBot</div><div class="msg-info-time">'+getCurrentTime()+'</div></div><p>'+ result +'</p></div></div>';
+                        $(".form").append($replay);
+                        // when chat goes down the scroll bar automatically comes to the bottom
+                        $(".form").scrollTop($(".form")[0].scrollHeight);
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script>
+                function getCurrentTime(){
+			var now = new Date();
+			var hh = now.getHours();
+			var min = now.getMinutes();
+			var ampm = (hh>=12)?'PM':'AM';
+			hh = hh%12;
+			hh = hh?hh:12;
+			hh = hh<10?'0'+hh:hh;
+			min = min<10?'0'+min:min;
+            var time = hh+":"+min+" "+ampm;
+            return time;
+        }
+    </script>
 
 
 
@@ -183,11 +215,6 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/theme.js"></script>
+
 </body>
 </html>
-
-
-
-
-
-
