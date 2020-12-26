@@ -61,23 +61,25 @@
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
                             <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
-                           <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link font" href="Login/signup.php">Đăng Ký</a></li>
-                                    <?php if(isset($_SESSION['user_id'])): ?>
-                                        <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
-                                    <?php else: ?>
-                                        <li class="nav-item"><a class="nav-link font" href="Login/signin.php">Đăng nhập</a></li> 
-                                    <?php endif; ?>
-                                </ul>
-                            </li> 
                             <?php if(isset($_SESSION['user_id'])): ?>
                                 <?php 
                                     $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));
-                                 ?>
-                                <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> 
-                             <?php endif; ?>
+                                ?>
+                                <!-- <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> -->
+                                <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                    <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                    <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                    </ul>
+                                </li>
+                                <?php else : ?>
+                                    <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/signup.php">Đăng Ký</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="Login/signin.php">Đăng nhập</a></li> 
+                                        </ul>
+                                    </li> 
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

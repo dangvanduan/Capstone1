@@ -3,6 +3,7 @@
  ?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/themify-icons.css">
     <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css"> 
+    <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/animate-css/animate.css">
     <!-- main css -->
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="css/userInfo.css">
     <link rel="stylesheet" href="css/font.css">
 </head>
+
 <body>
 
     <!--================Header Menu  =================-->
@@ -31,72 +33,79 @@
         <div class="top_menu row m0">
             <div class="container">
                 <div class="float-left">
-                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
+                    <a class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i
+                            class="ti-email"></i>TuVanNhaKhoa.@gmail.com</a>
                 </div>
                 <div class="float-right">
                     <ul class="list header_social">
-                       
-                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i>Facebook</a></li>
+
+                        <li><a href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i
+                                    class="ti-facebook"></i>Facebook</a></li>
                         <li><a href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a></li>
-                    </ul>	
+                    </ul>
                 </div>
-            </div>	
-        </div>	
+            </div>
+        </div>
         <!-- =============================MAIN MENU -->
 
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                     <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img src="img/logo.png" alt=""></a>
-                     <form action="timkiem.php" method="GET">
-                    <input type="text" class="search-box" placeholder= "vd: viêm nướu..." style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
-                        <input type="submit" value="Tìm" style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
-                     </form>
+                    <a style="font-size: 20px; color: purple" class="navbar-brand logo_h" href="index.php"><img
+                            src="img/logo.png" alt=""></a>
+                    <form action="timkiem.php" method="GET">
+                        <input type="text" class="search-box" placeholder="vd: viêm nướu..."
+                            style="width: 230px ;height:40px;" name="key" required="Vui lòng gõ gì đó">
+                        <input type="submit" value="Tìm"
+                            style="margin-left: 5px; border: 1px solid blue; height: 40px; background-color: green;color: white;width: 48px;">
+                    </form>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
-                           <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li> 
-                            
-                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>    
+                            <li class="nav-item"><a class="nav-link font" href="index.php">Trang chủ</a></li>
+
+                            <li class="nav-item"><a class="nav-link font" href="doctors.php">Nhakhoa</a></li>
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
-                            </li> 
-                            <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
-                           <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
-                                <ul class="dropdown-menu">
-                                    
-                                    <?php if(isset($_SESSION['user_id'])): ?>
-                                        <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
-                                        <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
-                                    <?php else: ?>
-                                        <li class="nav-item"><a class="nav-link font" href="Login/signin.php">Đăng nhập</a></li> 
-                                    <?php endif; ?>
-                                </ul>
-                            </li> 
+                            </li>
+                            <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li>
                             <?php if(isset($_SESSION['user_id'])): ?>
                                 <?php 
                                     $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));
-                                 ?>
-                                <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> 
-                             <?php endif; ?>
+                                ?>
+                                <!-- <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> -->
+                                <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                    <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                    <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                    </ul>
+                                </li>
+                                <?php else : ?>
+                                    <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/signup.php">Đăng Ký</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="Login/signin.php">Đăng nhập</a></li> 
+                                        </ul>
+                                    </li> 
+                            <?php endif; ?>
+
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
         </div>
-    </header>    
+    </header>
     <section class="blog-area area-padding">
-            <div class="container">
-                <div class="Title_Banner row">
-                    <div class="col-md-5 col-xl-4">
-                        <h1 style="color: black">Thông tin của bạn</h1>
-                    </div>
+        <div class="container">
+            <div class="Title_Banner row">
+                <div class="col-md-5 col-xl-4">
+                    <h1 style="color: black">Thông tin của bạn</h1>
                 </div>
-                <div style="margin-top: -15px;margin: 0px auto;">
-                    <?php 
+            </div>
+            <div style="margin-top: -15px;margin: 0px auto;">
+                <?php 
                         $phone = empty($_SESSION['phone'])?"chưa công khai" :$_SESSION['phone'];
                         $role = $_SESSION['role'] ==1?'Khách hàng':'Nha khoa';
                              $text='<div class="info">
@@ -135,10 +144,10 @@
                              $text= $text.'</div>';
                              echo $text;  
                             
-                     ?> 
-                     <div class="business">
-                        <div class="row">
-                            <?php 
+                     ?>
+                <div class="business">
+                    <div class="row">
+                        <?php 
                                 require 'server/getUserInfo.php';
                                 $text='<div class="col-md-6 col-lg-4" >
                                      <div class="card-service text-center text-lg-left mb-4 mb-lg-0" style="border-radius: 8px;background-color: purple">
@@ -160,46 +169,52 @@
                                 </div>';
                                 echo $text;
                              ?>
-                            
-                        </div>
-                     </div>  
-                </div>
-            </div>
-        </section>
-        <section class="hotline-area text-center area-padding" style="margin-top: 15px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>Điên thoại tu vấn 24/7</h2>
-                        <span>(034)-7927070</span>
-                        <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và cùng bạn đánh bại chúng</p>
+
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 5px;">
-                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
-                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
-                <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
+        </div>
+    </section>
+    <section class="hotline-area text-center area-padding" style="margin-top: 15px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Điên thoại tu vấn 24/7</h2>
+                    <span>(034)-7927070</span>
+                    <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và
+                        cùng bạn đánh bại chúng</p>
+                </div>
             </div>
-     </section>
+        </div>
+        <div style="margin-top: 5px;">
+            <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn"
+                href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa.@gmail.com</a>
+            <a style="color: yellow;margin-left: 5px;"
+                href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i
+                    class="ti-facebook"></i></a>
+            <a style="color: yellow;margin-left: 5px;" href="https://secure.skype.com/portal/overview"><i
+                    class="ti-skype"></i></a>
+        </div>
+    </section>
     <div class="footer" style="text-align: center; margin-bottom: 20px;">
-    <hr>
- 
-</div>
-<!-- ====================================FOOTER -->
+        <hr>
 
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/stellar.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/contact.js"></script>
-<script src="js/jquery.form.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/theme.js"></script>
+    </div>
+    <!-- ====================================FOOTER -->
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
+
 </html>
