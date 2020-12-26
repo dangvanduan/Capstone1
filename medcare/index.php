@@ -61,9 +61,7 @@
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li>          
-                            <li class="nav-item">
-                                <a href="bot.php" class="nav-link font">ChatBot</a>
-                            </li>                   
+           
                             <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
                            <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
@@ -101,7 +99,7 @@
 
                     <p>Đội ngũ nha sĩ nhiệt tình, dày kinh nghiệm sẽ giúp bạn tìm giải quyết mọi vấn đề về sức khỏe răng miệng, hãy gia nhập cộng đồng của chúng tôi để được chăm sóc, học hỏi và chia sẻ mọi lúc mọi nơi.</p>
                     <!-- <a href="" onclick="click()" class="main_btn">Đặt vấn đề</a> -->
-                    <button class="main_btn" id="btn"><a href="hoidap.php" style="color: yellow">Đặt vấn đề</a></button>
+                    <button class="main_btn" id="btn"><a href="bot.php" style="color: yellow">Chatbot</a></button>
                 </div>
             </div>
         </div>

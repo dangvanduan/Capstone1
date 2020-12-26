@@ -1,13 +1,23 @@
 <?php
 // connecting to database
-$conn = mysqli_connect("localhost", "root", "", "nhakhoa") or die("Database Error");
+require 'server/connect.php';
 
-// getting user message through ajax
-$getMesg = mysqli_real_escape_string($conn, $_POST['text']);
+// $connect = mysqli_connect("localhost", "root", "", "nhakhoa") or die("Database Error");
+$name = 'user';
+if(isset($_SESSION['user_id'])){
+    global $name;
+    $name = substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));
+}
+
+    // getting user message through ajax
+$getMesg = mysqli_real_escape_string($connect, $_POST['text']);
 
 //checking user query to database query
 $check_data = "SELECT replies FROM chatbot WHERE queries LIKE N'%$getMesg%'";
-$run_query = mysqli_query($conn, $check_data) or die("Error");
+
+// $check_data = "SELECT replies FROM chatbot WHERE queries RLIKE N'[[:<:]]".$getMesg."[[:>:]]'";
+
+$run_query = mysqli_query($connect, $check_data) or die("Error");
 
 // if user query matched to database query we'll show the reply otherwise it go to else statement
 if(mysqli_num_rows($run_query) > 0){
@@ -21,12 +31,13 @@ if(mysqli_num_rows($run_query) > 0){
     $myFile = "test.txt";
     $fh = fopen($myFile, 'a');
     fwrite($fh, $getMesg. "\n");
+    // fwrite($fh, $getMesg. "<br/>");
     fclose($fh);
 }
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 $added_on=date('Y-m-d H:i:s');
-mysqli_query($conn,"INSERT INTO message(message,added_on,type) VALUES('$getMesg','$added_on','user')");
+mysqli_query($connect,"INSERT INTO message(message,added_on,type) VALUES('$getMesg','$added_on','$name')");
 $added_on=date('Y-m-d H:i:s');
-mysqli_query($conn,"INSERT INTO message(message,added_on,type) VALUES('$replay','$added_on','bot')");
+mysqli_query($connect,"INSERT INTO message(message,added_on,type) VALUES('$replay','$added_on','bot')");
 echo $replay;
 ?>

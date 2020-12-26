@@ -58,9 +58,6 @@
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
-                            <li class="nav-item">
-                                <a href="bot.php" class="nav-link font">ChatBot</a>
-                            </li> 
                             <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
                            <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
@@ -184,7 +181,7 @@
 
     </script>
     <script>
-                function getCurrentTime(){
+            function getCurrentTime(){
 			var now = new Date();
 			var hh = now.getHours();
 			var min = now.getMinutes();

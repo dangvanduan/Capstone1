@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2020 lúc 09:50 AM
--- Phiên bản máy phục vụ: 10.4.14-MariaDB
--- Phiên bản PHP: 7.2.34
+-- Host: 127.0.0.1
+-- Generation Time: Dec 26, 2020 at 05:51 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `nhakhoa`
+-- Database: `nhakhoa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categoty`
+-- Table structure for table `categoty`
 --
 
 CREATE TABLE `categoty` (
@@ -35,7 +35,7 @@ CREATE TABLE `categoty` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `categoty`
+-- Dumping data for table `categoty`
 --
 
 INSERT INTO `categoty` (`category_id`, `category_name`, `description`, `status`) VALUES
@@ -56,7 +56,48 @@ INSERT INTO `categoty` (`category_id`, `category_name`, `description`, `status`)
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `climate`
+-- Table structure for table `chatbot`
+--
+
+CREATE TABLE `chatbot` (
+  `id` int(11) NOT NULL,
+  `queries` varchar(1000) COLLATE utf8_vietnamese_ci NOT NULL,
+  `replies` varchar(5000) COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
+
+--
+-- Dumping data for table `chatbot`
+--
+
+INSERT INTO `chatbot` (`id`, `queries`, `replies`) VALUES
+(1, '|hello there|good morning|good evening|hey there|let\'s go|hey dude|goodmorning|goodevening|good afternoon|xin chào|chào bạn|hello|hi|hey|mình có vài câu hỏi|có ai giúp mình không|bạn ơi|anh ơi|chị ơi|cháu ơi|chào|có ai ở đây không?|chào anh|chào chị|chào bạn|chào buổi sáng|chào buổi tối|chào buổi chiều|chào em|chào đằng ấy|này|này ơi|bạn gì đó ơi|ê mày', 'Kính chào Quý khách!'),
+(2, '|good afternoon|good bye|see you later|good night|bye|goodbye|have a nice day|see you around|bye bye|see you later|tạm biệt|chào tạm biệt|chào tạm biệt em|tạm biệt em|tạm biệt em nhé', 'Xin chào và hẹn gặp lại quý khách ạ!'),
+(3, '|chuẩn|hay|siêu|tuyệt|cám ơn|thanks|thank you|giỏi|tốt|khá lắm|ngoan|ok|oke|oki|okela|cảm ơn em|cảm ơn em nhiều nhé|cảm ơn|cảm ơn em nhá|thanks em nha|cảm ơn nha|good job|thank you|cảm ơn bot nha|thanks bot|cảm ơn|thank you so much|great! Thanks', 'Dạ không có gì, đó là trách nhiệm của em mà!'),
+(4, 'bạn tên gì|tên gì|chị tên gì|anh tên gì|tên của bạn là gì|tên của chị là gì|tên của anh là gì|cho mình hỏi tên nhé|mình muốn biết tên bạn|mình muốn tiện xưng hộ hơn, cho mình biết tên nhé|để tiện xưng hộ thì tên bạn là gì|cho em xin tên của anh ạ|cho em xin tên của chị ạ|được biết tên bạn thì tốt nhỉ|vui lòng cho mình biết tên nhé|xin phép hỏi tên của bạn|vậy thì tên bạn là gì|tên bạn trong tiếng việt là gì|bạn có vui lòng cho mình biết tên được không|chúng ta nên biết tên nhau nhỉ?|em tên là gì thế|tên em là gì|tên em|tên bạn|bạn tên là gì|bạn tên gì thế|em tên gì', 'Em họ Chat, tên Bot! Người ta hay gọi em là ChatBot thông minh xinh đẹp giỏi giang nhất vũ trụ ạ! Quý khách cần trợ giúp gì ạ?|Em họ Chat, tên Bot! Người ta hay gọi em là ChatBot thông minh xinh đẹp giỏi giang nhất vũ trụ ạ! Quý khách cần trợ giúp gì ạ?'),
+(5, '|Nha khoa là gì |Nha khoa |Thế nào là nha nha khoa |Tôi muốn biết về nha khoa |Em có thể cho anh biết về nha khoa |Định nghĩa nha khoa', 'Nha khoa là một khoa học nghiên cứu, chẩn định, chữa và phòng chống các bệnh về răng và các bộ phận khác trong miệng như xương hàm, nướu, và mạc mô trong miệng, gồm luôn cả các phần gần xương mặt và má.'),
+(6, '|Nha khoa thẩm mĩ là gì |Nha khoa thẩm mĩ |Thế nào là nha khoa thẩm mĩ |Tôi muốn biết về nha khoa thẩm mĩ |Em có thể cho anh biết về nha khoa thẩm mĩ |Định nghĩa nha khoa thẩm mĩ', 'Nha khoa thẩm mỹ là gì? là một từ khóa tìm kiếm chiếm tỉ lệ cao trên Google. Có thể hiểu, Nha khoa thẩm mỹ là phương pháp kết hợp nhuần nhị giữa yếu tố khoa học và nghệ thuật trong điều trị nha khoa. Thay vì là một loại hình cụ thể hoặc một loại điều trị. Nó bao gồm tất cả các quy trình điều trị Nha khoa với mục đích tạo ra kết quả tốt nhất cho bệnh nhân. Đó là sự hoàn thiện các quan điểm thẩm mỹ, chức năng và sinh học.'),
+(7, '|bạn có thể làm được những gì|bạn giúp được gì nào|chức năng của bạn là gì|bạn có thể làm được mấy chức năng|bạn giỏi nhất làm gì|bạn có tư vấn giúp mình được không|việc gì bạn làm được|kể xem bạn làm được gì|cho mình biết bạn làm được gì nhé|bạn hữu dụng như thế nào|bạn có ích trong những việc gì|lĩnh vực gì bạn giỏi nhất|mình tò mò về những việc bạn làm được|chẳng biết bạn làm được gì|bạn tệ nhất trong việc gì|bạn biết được những lĩnh vực gì|bạn giỏi hỗ trợ nhất trong lĩnh vực gì|kể cho mình biết những việc bạn có thể làm được nhé|nói cho mình về những việc bạn giúp được mình|bạn giúp được mình gì nào|bạn có thể làm gì|em giúp được gì|em làm được gì|mày biết làm gì|em biết làm gì|bạn biết làm gì|biết làm gì|làm được gì|có làm được gì|có làm được trò gì|giúp giúp cái gì|biết gì mà nói|làm được gì|giúp được gì|mày làm được gì|có biết gì', 'Em có thể làm được rất nhiều thứ: hát, đọc thơ, đọc chuyện...nhưng giờ em chỉ chat thôi!'),
+(8, '|Chatbot bán hàng là gì |Chatbot bán hàng |Thế nào là chatbot bán hàng |Tôi muốn biết về chatbot bán hàng |Em có thể cho anh biết về chatbot bán hàng |Định nghĩa chatbot bán hàng |Bán hàng', 'Là công cụ hỗ trợ bán hàng hoạt động 24/7. Chatbot cập nhật liên tục, giúp bạn không bỏ sót đơn của khách hàng.'),
+(9, '|Chatbot chăm sóc khách hàng là gì\r\n|Chatbot chăm sóc khách hàng\r\n|Thế nào là chatbot chăm sóc khách hàng\r\n|Tôi muốn biết về chatbot chăm sóc khách hàng\r\n|Em có thể cho anh biết về chatbot chăm sóc khách hàng\r\n|Định nghĩa chatbot chăm sóc khách hàng\r\n|Chăm sóc khách hàng', 'Loại chatbot này thường được các trung tâm chăm sóc khách hàng lớn sử dụng để trả lời các câu hỏi thường gặp theo kịch bản hoặc dữ liệu có sẵn.'),
+(10, '|retrieval action là gì thế? |cho tôi biết về retrieval actions |retrieval action dùng để làm gì |tại sao lại cần retrieval actions', 'Retrieval action là một dạng action trong Rasa được thiết kế để xử lý các câu hỏi dạng FAQ'),
+(11, '|Các loại chatbot hiện nay |Tôi muốn biết về các loại Chatbot |Em có thể cho anh thông tin về các loại Chatbot không? |Có mấy loại Chatbot |Mấy loại Chatbot |Loại Chatbot', 'Có nhiều cách để phân loại chatbot. Nếu xét theo khía cạnh dịch vụ thì có thể chia chatbot thành 2 loại, đó là: Chatbot bán hàng & Chatbot chăm sóc khách hàng'),
+(12, '|Rasa là gì? |Tôi muốn biết về Rasa |Em có thể cho anh thông tin về Rasa không? |Rasa là gì', 'Rasa là một nền tảng chabot.'),
+(13, '|Tôi muốn biết về Chatbot |Em có thể cho anh thông tin về Chatbot không? |Chatbot là gì |Thế nào là chatbot |Định nghĩa chatbot |Chatbot được định nghĩa như thế nào |Chatbot', 'Chatbot là một chương trình kết hợp với trí tuệ nhân tạo (AI) để tương tác với con người. Công cụ này thay thế cho nhân viên để tư vấn trả lời những gì khách hàng thắc mắc.'),
+(14, '|Cho hỏi nha khoa ở quận Hải Châu |Hải Châu |Nha khoa ở Hải Châu Đà Nẵng |Nha khoa Hải Châu |Nha khoa ở Hải Châu |Các nha khoa ở Hải Châu |Nha khoa ở quận Hải Châu |Thống kê nha khoa ở Hải Châu |Thống kê nha khoa Hải Châu |Nha khoa Hải Châu - Đà Nẵng |Quận Hải Châu |Cho anh hỏi nha khoa ở Hải Châu |Cho mình hỏi các nha khoa ở Hải Châu |Hải Châu - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Hải Châu – Đà Nẵng\r\n\r\n1. Nha khoa Rạng Ngời\r\n\r\nĐịa chỉ: 29 Nguyễn Hữu Thọ, Hải Châu, Đà Nẵng, Việt Nam\r\n\r\nSố điện thoại: (0511) 3614 766\r\n\r\n2. Trung tâm nha khoa Việt Khương\r\n\r\nĐịa chỉ: 207 Hùng Vương, Quận Hải Châu, TP. Đà Nẵng\r\n\r\nSố điện thoại: (0511) 386 75 75\r\n\r\n3. Nha khoa IDC DANANG\r\n\r\nĐịa chỉ: 203 Trần Phú, Quận Hải Châu, TP.Đà Nẵng.\r\n\r\nSố điện thoại: 0511.388 6588\r\n\r\nEmail: dentalinfo@idcdanang.com'),
+(15, '|Cho hỏi nha khoa ở quận Thanh Khê |Thanh Khê |Nha khoa ở Thanh Khê Đà Nẵng |Nha khoa Thanh Khê |Nha khoa ở Thanh Khê |Các nha khoa ở Thanh Khê |Nha khoa ở quận Thanh Khê |Thống kê nha khoa ở Thanh Khê |Thống kê nha khoa Thanh Khê |Nha khoa Thanh Khê - Đà Nẵng |Quận Thanh Khê |Cho anh hỏi nha khoa ở Thanh Khê |Cho mình hỏi các nha khoa ở Thanh Khê |Thanh Khê - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Thanh Khê – Đà Nẵng\r\n\r\n1. Phòng răng Lâm Thanh Phong\r\n\r\nĐịa chỉ: 92 Thái Thị Bôi, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.\r\n\r\nSố điện thoại: (0511) 3649589\r\n\r\n2. Phòng răng bác sĩ Tăng Kim Sinh\r\n\r\nĐịa chỉ: 279 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.\r\n\r\nSố điện thoại: (0511) 3891957\r\n\r\n3. Nha Khoa Vũ Đình Châu\r\n\r\nĐịa chỉ: 50 Lý Thái Tổ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.\r\n\r\nSố điện thoại: (0511) 383 7193'),
+(21, '|Cho hỏi nha khoa ở quận Sơn Trà |Sơn Trà |Nha khoa ở Sơn Trà Đà Nẵng |Nha khoa Ngũ Sơn Trà |Nha khoa ở Sơn Trà |Các nha khoa ở Sơn Trà |Nha khoa ở quận Sơn Trà |Thống kê nha khoa ở Sơn Trà |Thống kê nha khoa Sơn Trà |Nha khoa Sơn Trà - Đà Nẵng |Quận Sơn Trà |Cho anh hỏi nha khoa ở Sơn Trà |Cho mình hỏi các nha khoa ở Sơn Trà |Sơn Trà - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Sơn Trà – Đà Nẵng  1. Phòng khám nha khoa bác sĩ Nhung  Địa chỉ: 36 Nguyễn Thông, Phường An Hải Tây, Quận Sơn Trà, Thành Phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3933399  2. Phòng khám nha khoa Minh Hường  Địa chỉ: 1002 Ngô Quyền, Quận Sơn Trà, Thành Phố Đà Nẵng, Việt Nam.  3. Phòng răng Trần Quang Tuấn  Địa chỉ: 282 Ngô Quyền, Quận Sơn Trà, Thành Phố Đà Nẵng, Việt Nam.'),
+(22, '|Cho hỏi nha khoa ở quận Ngũ Hành Sơn |Ngũ Hành Sơn |Nha khoa ở Ngũ Hành Sơn Đà Nẵng |Nha khoa Ngũ Hành Sơn |Nha khoa ở Ngũ Hành Sơn |Các nha khoa ở Ngũ Hành Sơn |Nha khoa ở quận Ngũ Hành Sơn |Thống kê nha khoa ở Ngũ Hành Sơn |Thống kê nha khoa Ngũ Hành Sơn |Nha khoa Ngũ Hành Sơn - Đà Nẵng |Quận Ngũ Hành Sơn |Cho anh hỏi nha khoa ở Ngũ Hành Sơn |Cho mình hỏi các nha khoa ở Ngũ Hành Sơn |Ngũ Hành Sơn - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Ngũ Hành Sơn – Đà Nẵng  1. Phòng khám nha khoa Lê Văn Hiến  Địa chỉ: 420 Lê Văn Hiến, Quận Ngũ Hành Sơn, TP.Đà Nẵng, Việt Nam.  2. Nha Khoa Huy Hoàng  Địa chỉ: 376 Lê Văn Hiến, Quận Ngũ Hành Sơn, TP.Đà Nẵng, Việt Nam.  Điện thoại: (0511) 3986 730  3. Phòng khám nha khoa thẩm mỹ  Địa chỉ: 50 Nguyễn Văn Thoại, Quận Ngũ Hành Sơn, TP.Đà Nẵng, Việt Nam.'),
+(23, '|Cho hỏi nha khoa ở quận Liên Chiểu |Liên Chiểu |Nha khoa ở Liên Chiểu Đà Nẵng |Nha khoa Ngũ Liên Chiểu |Nha khoa ở Liên Chiểu |Các nha khoa ở Liên Chiểu |Nha khoa ở quận Liên Chiểu |Thống kê nha khoa ở Liên Chiểu |Thống kê nha khoa Liên Chiểu |Nha khoa Liên Chiểu - Đà Nẵng |Quận Liên Chiểu |Cho anh hỏi nha khoa ở Liên Chiểu |Cho mình hỏi các nha khoa ở Liên Chiểu |Liên Chiểu - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Liên Chiểu – Đà Nẵng  1. Nha Khoa Bác sĩ Tiến  Địa chỉ: 782, Tôn Đức Thắng, Phường Hòa Minh, Quận Liên Chiểu, Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3734 297  2. Phòng răng Tôn Đức Thắng  Địa chỉ: 495 Tôn Đức Thắng, Phường Hòa Minh, Quận Liên Chiểu, Đà Nẵng.  3. Phòng khám nha khoa 751  Địa chỉ: 751 Tôn Đức Thắng, Quận Liên Chiểu, Đà Nẵng.'),
+(24, '|Cho hỏi nha khoa ở quận Cẩm Lệ |Cẩm Lệ |Nha khoa ở Cẩm Lệ Đà Nẵng |Nha khoa Ngũ Cẩm Lệ |Nha khoa ở Cẩm Lệ |Các nha khoa ở Cẩm Lệ |Nha khoa ở quận Cẩm Lệ |Thống kê nha khoa ở Cẩm Lệ |Thống kê nha khoa Cẩm Lệ |Nha khoa Cẩm Lệ - Đà Nẵng |Quận Cẩm Lệ |Cho anh hỏi nha khoa ở Cẩm Lệ |Cho mình hỏi các nha khoa ở Cẩm Lệ |Cẩm Lệ - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Cẩm Lệ – Đà Nẵng  1. Nha Khoa Sài Gòn  Địa chỉ: 43 Tôn Đức Thắng, Phường Hòa An, Quận Cẩm Lệ, TP.Đà Nẵng, Việt Nam.  Điện thoại: 090 646 5209  2. Nha Khoa Thẩm Mỹ  Địa chỉ: 78 Phan Anh, Quận Cẩm Lệ, TP.Đà Nẵng, Việt Nam.  3. Nha Khoa bác sĩ Hải  Địa chỉ: 111 Nguyễn Phong Sắc, Quận Cẩm Lệ, TP.Đà Nẵng, Việt Nam.'),
+(25, '|Lợi ích của chỉ nha khoa là gì |Lợi ích chỉ nha khoa |Ích lợi chỉ nha khoa |Các lợi ích của chỉ nha khoa |Chỉ nha khoa có lợi gì |Cho anh biết lợi ích của chỉ nha khoa |Em có thể nêu lợi ích của chỉ nha khoa', '5 lợi ích cụ thể từ việc sử dụng chỉ nha khoa 1. Phòng ngừa viêm lợi Viêm lợi là bệnh lý khá phổ biến, tạo ra cảm giác đau đớn bao gồm các triệu chứng như chảy máu hoặc sưng lợi. Một trong những cách đơn giản nhất để ngăn ngừa viêm lợi là dùng chỉ nha khoa thường xuyên, có thể loại bỏ các mảng bám tích tụ trên đường nướu dẫn đến bệnh.  2. Phòng ngừa tiểu đường Tưởng như chẳng có sự liên quan gì giữa bệnh tiểu đường và việc dùng chỉ nha khao, nghe thì rất vô lý nhưng lại vô cùng thuyết phục. Việc dùng chỉ nha khoa có thể có tác động tích cực lớn đối với bệnh tiểu đường ở cả trẻ em và người lớn. Khi bạn không dùng chỉ nha khoa, vi khuẩn trong miệng sẽ tích tụ với tốc độ nhanh. Vi khuẩn miệng này có thể ảnh hưởng đến mức glucose trong máu của bạn, đây là một vấn đề lớn nếu bạn bị tiểu đường. Để giúp ổn định lượng đường trong máu, hãy đảm bảo dùng chỉ nha khoa ít nhất một lần mỗi ngày và loại bỏ càng nhiều vi khuẩn khỏi miệng càng tốt,  3. Phòng ngừa chứng hôi miệng Chứng hôi miệng khá phổ biến, khiến cho người bệnh cảm thấy mất tự tin khi giao tiếp. Đánh răng hai hoặc ba lần một ngày và sử dụng nước súc miệng chắc chắn có thể giúp ích, nhưng chính sự tích tụ vi khuẩn của cao răng gây ra mùi mạnh nhất. Bạn có thể loại bỏ cặn răng trên răng bằng cách đánh răng, nhưng chỉ nha khoa có thể giúp loại bỏ cặn răng khỏi lợi và ở giữa răng của bạn. Những người bị hôi miệng bắt đầu dùng chỉ nha khoa thường ghi nhận những cải thiện trong hơi thở của họ trong vòng một tuần.  4. Giảm nguy cơ các bệnh hô hấp Miệng của bạn là cánh cửa trực tiếp đến các cơ quan của cơ thể bạn. Ngoài công việc nạp năng lượng vào, vi khuẩn từ miệng có thể đi xuống cổ họng của bạn đến hệ hô hấp. Dùng chỉ nha khoa có thể loại bỏ một số vi khuẩn miệng gây viêm phế quản và thậm chí viêm phổi.  5. Sử dụng chỉ nha khoa có thể ngăn ngừa các bệnh tim mạch Nếu không dùng chỉ nha khoa thường xuyên, bạn có thể nhận thấy rằng lợi – nướu của bạn bị chảy máu, đó là dấu hiệu của viêm lợi. Một trong những vấn đề liên quan đến bệnh này là việc vi khuẩn có thể xâm nhập vào máu và tấn công các cơ thể của bạn. Cuối cùng, điều này có thể dẫn đến các vấn đề tim mạch hoặc cục máu đông.'),
+(26, '|Chỉ nha khoa là gì |Chỉ nha khoa |Thế nào là nha chỉ nha khoa |Tôi muốn biết về chỉ nha khoa |Em có thể cho anh biết về chỉ nha khoa |Định nghĩa chỉ nha khoa', 'Chỉ nha khoa là một sợi dây chỉ mỏng được sử dụng để loại bỏ thức ăn và mảng bám răng giữa các kẽ răng nơi mà bàn chải đánh răng không thể với tới.'),
+(28, '|Chatbot fb là gì |Chatbot Facebook |Chatbot Facebook là gì |Chatbot Fb |Chatbot fb |Thế nào là chatbot Facebook |Thế nào là chatbot fb |Tôi muốn biết về chatbot Facebook |Tôi muốn biết về chatbot fb |Em có thể cho anh biết về chatbot fb |Em có thể cho anh biết về chatbot facebook |Định nghĩa chatbot fb     |Định nghĩa chatbot facebook', 'Chatbot Facebook là một phần mở rộng cho chức năng nhắn tin trên trang Facebook.'),
+(29, '|Cho hỏi nha khoa ở huyện Hoàng Sa |Huyện đảo Hoàng Sa |Nha khoa ở Hoàng Sa Đà Nẵng |Nha khoa huyện Hoàng Sa |Nha khoa ở huyện Hoàng Sa |Các nha khoa ở huyện Hoàng Sa |Nha khoa ở huyện Hoàng Sa |Thống kê nha khoa ở huyện Hoàng Sa |Thống kê nha khoa huyện Hoàng Sa |Nha khoa huyện Hoàng Sa - Đà Nẵng |Hoàng Sa |Cho anh hỏi nha khoa ở huyện Hoàng Sa |Cho mình hỏi các nha khoa ở huyện Hoàng Sa |Hoàng Sa - Đà Nẵng |Nha khoa Hoàng Sa |Nha khoa ở Hoàng Sa |Các nha khoa ở Hoàng Sa |Nha khoa ở Hoàng Sa |Đảo Hoàng Sa |Huyện đảo Hoàng Sa - Đà Nẵng', 'Xin lỗi hiện tại chưa có nha khoa nào tại huyện Hoàng Sa!!!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `climate`
 --
 
 CREATE TABLE `climate` (
@@ -66,7 +107,7 @@ CREATE TABLE `climate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `climate`
+-- Dumping data for table `climate`
 --
 
 INSERT INTO `climate` (`id`, `title`, `description`) VALUES
@@ -77,7 +118,7 @@ INSERT INTO `climate` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `dental`
+-- Table structure for table `dental`
 --
 
 CREATE TABLE `dental` (
@@ -93,7 +134,7 @@ CREATE TABLE `dental` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `dental`
+-- Dumping data for table `dental`
 --
 
 INSERT INTO `dental` (`user_id`, `dental_name`, `dental_email`, `dental_address`, `dental_phone`, `dental_source`, `dental_description`, `dental_price`, `open_time`) VALUES
@@ -102,7 +143,20 @@ INSERT INTO `dental` (`user_id`, `dental_name`, `dental_email`, `dental_address`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `news`
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
+  `added_on` datetime NOT NULL,
+  `type` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -119,7 +173,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`news_id`, `title`, `description`, `content`, `category_id`, `new_source`, `status`, `topic`, `climate`, `patience`) VALUES
@@ -132,7 +186,7 @@ INSERT INTO `news` (`news_id`, `title`, `description`, `content`, `category_id`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `patience`
+-- Table structure for table `patience`
 --
 
 CREATE TABLE `patience` (
@@ -142,7 +196,7 @@ CREATE TABLE `patience` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `patience`
+-- Dumping data for table `patience`
 --
 
 INSERT INTO `patience` (`id`, `title`, `description`) VALUES
@@ -158,7 +212,7 @@ INSERT INTO `patience` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `qa`
+-- Table structure for table `qa`
 --
 
 CREATE TABLE `qa` (
@@ -177,7 +231,7 @@ CREATE TABLE `qa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `qa`
+-- Dumping data for table `qa`
 --
 
 INSERT INTO `qa` (`qa_id`, `qa_title`, `category_id`, `qa_content`, `user_id`, `parent_id`, `like_count`, `create_date`, `status`, `topic`, `climate`, `patience`) VALUES
@@ -204,7 +258,7 @@ INSERT INTO `qa` (`qa_id`, `qa_title`, `category_id`, `qa_content`, `user_id`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `topic`
+-- Table structure for table `topic`
 --
 
 CREATE TABLE `topic` (
@@ -214,7 +268,7 @@ CREATE TABLE `topic` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `topic`
+-- Dumping data for table `topic`
 --
 
 INSERT INTO `topic` (`id`, `title`, `description`) VALUES
@@ -231,7 +285,7 @@ INSERT INTO `topic` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tuvan`
+-- Table structure for table `tuvan`
 --
 
 CREATE TABLE `tuvan` (
@@ -246,7 +300,7 @@ CREATE TABLE `tuvan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `tuvan`
+-- Dumping data for table `tuvan`
 --
 
 INSERT INTO `tuvan` (`id`, `category_id`, `title`, `TuVan`, `topic`, `climate`, `patience`, `status`) VALUES
@@ -255,7 +309,7 @@ INSERT INTO `tuvan` (`id`, `category_id`, `title`, `TuVan`, `topic`, `climate`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -274,7 +328,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `phone`, `role`, `create_date`, `dental_address`, `link`, `categorize`, `open_time`, `status`) VALUES
@@ -298,29 +352,41 @@ INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`, `phone`, `role`
 (62, 'Huy', 'huy@gmail.com', 'a9e613cb8ecebd0517fbe86c75e5720c', '0123456789', 1, '01/12/2020', '', '', '', '', 1);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `categoty`
+-- Indexes for table `categoty`
 --
 ALTER TABLE `categoty`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Chỉ mục cho bảng `climate`
+-- Indexes for table `chatbot`
+--
+ALTER TABLE `chatbot`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `climate`
 --
 ALTER TABLE `climate`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `dental`
+-- Indexes for table `dental`
 --
 ALTER TABLE `dental`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Chỉ mục cho bảng `news`
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`news_id`),
@@ -330,13 +396,13 @@ ALTER TABLE `news`
   ADD KEY `patience` (`patience`);
 
 --
--- Chỉ mục cho bảng `patience`
+-- Indexes for table `patience`
 --
 ALTER TABLE `patience`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `qa`
+-- Indexes for table `qa`
 --
 ALTER TABLE `qa`
   ADD PRIMARY KEY (`qa_id`),
@@ -344,13 +410,13 @@ ALTER TABLE `qa`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `topic`
+-- Indexes for table `topic`
 --
 ALTER TABLE `topic`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tuvan`
+-- Indexes for table `tuvan`
 --
 ALTER TABLE `tuvan`
   ADD PRIMARY KEY (`id`),
@@ -359,180 +425,74 @@ ALTER TABLE `tuvan`
   ADD KEY `topic` (`topic`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `categoty`
+-- AUTO_INCREMENT for table `categoty`
 --
 ALTER TABLE `categoty`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `climate`
+-- AUTO_INCREMENT for table `chatbot`
+--
+ALTER TABLE `chatbot`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `climate`
 --
 ALTER TABLE `climate`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `news`
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+
+--
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT cho bảng `patience`
+-- AUTO_INCREMENT for table `patience`
 --
 ALTER TABLE `patience`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `qa`
+-- AUTO_INCREMENT for table `qa`
 --
 ALTER TABLE `qa`
   MODIFY `qa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1090;
 
 --
--- AUTO_INCREMENT cho bảng `topic`
+-- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
   MODIFY `id` smallint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT cho bảng `tuvan`
+-- AUTO_INCREMENT for table `tuvan`
 --
 ALTER TABLE `tuvan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
---
--- Table structure for table `message`
---
-
-CREATE TABLE `message` (
-  `id` int(11) NOT NULL,
-  `message` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
-  `added_on` datetime NOT NULL,
-  `type` varchar(50) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `message`
---
-
-INSERT INTO `message` (`id`, `message`, `added_on`, `type`) VALUES
-(25, 'Xin chafo', '2020-12-12 08:55:52', 'user'),
-(26, 'Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách.', '2020-12-12 08:55:52', 'bot'),
-(27, 'asdasdasd', '2020-12-12 02:30:23', 'user'),
-(28, 'Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách.', '2020-12-12 02:30:23', 'bot'),
-(29, 'xin chào', '2020-12-12 02:30:55', 'user'),
-(30, 'Kính chào Quý khách!', '2020-12-12 02:30:55', 'bot'),
-(31, 'ádasdasd', '2020-12-12 02:43:39', 'user'),
-(32, 'Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách.', '2020-12-12 02:43:39', 'bot'),
-(33, 'câu hỏi nè', '2020-12-12 03:17:48', 'user'),
-(34, '123123', '2020-12-12 03:17:48', 'bot'),
-(35, 'câu hỏi nè', '2020-12-12 03:28:06', 'user'),
-(36, 'Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách.', '2020-12-12 03:28:06', 'bot'),
-(37, 'xin chao', '2020-12-12 05:08:39', 'user'),
-(38, 'Kính chào Quý khách!', '2020-12-12 05:08:39', 'bot'),
-(39, 'cam on', '2020-12-12 05:10:46', 'user'),
-(40, 'Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách.', '2020-12-12 05:10:46', 'bot'),
-(41, 'cảm ơn', '2020-12-12 05:11:04', 'user'),
-(42, 'Dạ không có gì, đó là trách nhiệm của em mà!', '2020-12-12 05:11:04', 'bot');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `message`
---
-ALTER TABLE `message`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `message`
---
-ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
---
--- Table structure for table `chatbot`
---
-
-CREATE TABLE `chatbot` (
-  `id` int(11) NOT NULL,
-  `queries` varchar(1000) COLLATE utf8_vietnamese_ci NOT NULL,
-  `replies` varchar(5000) COLLATE utf8_vietnamese_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
-
---
--- Dumping data for table `chatbot`
---
-
-INSERT INTO `chatbot` (`id`, `queries`, `replies`) VALUES
-(1, '|hello there|good morning|good evening|hey there|let\'s go|hey dude|goodmorning|goodevening|good afternoon|xin chào|chào bạn|hello|hi|hey|mình có vài câu hỏi|có ai giúp mình không|bạn ơi|anh ơi|chị ơi|cháu ơi|chào|có ai ở đây không?|chào anh|chào chị|chào bạn|chào buổi sáng|chào buổi tối|chào buổi chiều|chào em|chào đằng ấy|này|này ơi|bạn gì đó ơi|ê mày', 'Kính chào Quý khách!'),
-(2, '|good afternoon|good bye|see you later|good night|bye|goodbye|have a nice day|see you around|bye bye|see you later|tạm biệt|chào tạm biệt|chào tạm biệt em|tạm biệt em|tạm biệt em nhé', 'Xin chào và hẹn gặp lại quý khách ạ!'),
-(3, '|chuẩn|hay|siêu|tuyệt|cám ơn|thanks|thank you|giỏi|tốt|khá lắm|ngoan|ok|oke|oki|okela|cảm ơn em|cảm ơn em nhiều nhé|cảm ơn|cảm ơn em nhá|thanks em nha|cảm ơn nha|good job|thank you|cảm ơn bot nha|thanks bot|cảm ơn|thank you so much|great! Thanks', 'Dạ không có gì, đó là trách nhiệm của em mà!'),
-(4, 'bạn tên gì|tên gì|chị tên gì|anh tên gì|tên của bạn là gì|tên của chị là gì|tên của anh là gì|cho mình hỏi tên nhé|mình muốn biết tên bạn|mình muốn tiện xưng hộ hơn, cho mình biết tên nhé|để tiện xưng hộ thì tên bạn là gì|cho em xin tên của anh ạ|cho em xin tên của chị ạ|được biết tên bạn thì tốt nhỉ|vui lòng cho mình biết tên nhé|xin phép hỏi tên của bạn|vậy thì tên bạn là gì|tên bạn trong tiếng việt là gì|bạn có vui lòng cho mình biết tên được không|chúng ta nên biết tên nhau nhỉ?|em tên là gì thế|tên em là gì|tên em|tên bạn|bạn tên là gì|bạn tên gì thế|em tên gì', 'Em họ Chat, tên Bot! Người ta hay gọi em là ChatBot thông minh xinh đẹp giỏi giang nhất vũ trụ ạ! Quý khách cần trợ giúp gì ạ?|Em họ Chat, tên Bot! Người ta hay gọi em là ChatBot thông minh xinh đẹp giỏi giang nhất vũ trụ ạ! Quý khách cần trợ giúp gì ạ?'),
-(7, '|bạn có thể làm được những gì|bạn giúp được gì nào|chức năng của bạn là gì|bạn có thể làm được mấy chức năng|bạn giỏi nhất làm gì|bạn có tư vấn giúp mình được không|việc gì bạn làm được|kể xem bạn làm được gì|cho mình biết bạn làm được gì nhé|bạn hữu dụng như thế nào|bạn có ích trong những việc gì|lĩnh vực gì bạn giỏi nhất|mình tò mò về những việc bạn làm được|chẳng biết bạn làm được gì|bạn tệ nhất trong việc gì|bạn biết được những lĩnh vực gì|bạn giỏi hỗ trợ nhất trong lĩnh vực gì|kể cho mình biết những việc bạn có thể làm được nhé|nói cho mình về những việc bạn giúp được mình|bạn giúp được mình gì nào|bạn có thể làm gì|em giúp được gì|em làm được gì|mày biết làm gì|em biết làm gì|bạn biết làm gì|biết làm gì|làm được gì|có làm được gì|có làm được trò gì|giúp giúp cái gì|biết gì mà nói|làm được gì|giúp được gì|mày làm được gì|có biết gì', 'Em có thể làm được rất nhiều thứ: hát, đọc thơ, đọc chuyện...nhưng giờ em chỉ chat thôi!'),
-(9, '123', 'Đây là số 123'),
-(10, '|retrieval action là gì thế? |cho tôi biết về retrieval actions |retrieval action dùng để làm gì |tại sao lại cần retrieval actions', 'Retrieval action là một dạng action trong Rasa được thiết kế để xử lý các câu hỏi dạng FAQ'),
-(11, '|Các loại chatbot hiện nay |Tôi muốn biết về các loại Chatbot |Em có thể cho anh thông tin về các loại Chatbot không? |Có mấy loại Chatbot |Mấy loại Chatbot |Loại Chatbot', 'Có nhiều cách để phân loại chatbot. Nếu xét theo khía cạnh dịch vụ thì có thể chia chatbot thành 2 loại, đó là: Chatbot bán hàng & Chatbot chăm sóc khách hàng'),
-(12, '|Rasa là gì? |Tôi muốn biết về Rasa |Em có thể cho anh thông tin về Rasa không? |Rasa là gì', 'Rasa là một nền tảng chabot.'),
-(13, '|Tôi muốn biết về Chatbot |Em có thể cho anh thông tin về Chatbot không? |Chatbot là gì |Thế nào là chatbot |Định nghĩa chatbot |Chatbot được định nghĩa như thế nào |Chatbot', 'Chatbot là một chương trình kết hợp với trí tuệ nhân tạo (AI) để tương tác với con người. Công cụ này thay thế cho nhân viên để tư vấn trả lời những gì khách hàng thắc mắc.'),
-(14, '|Cho hỏi nha khoa ở quận Hải Châu |Hải Châu |Nha khoa ở Hải Châu Đà Nẵng |Nha khoa Hải Châu |Nha khoa ở Hải Châu |Các nha khoa ở Hải Châu |Nha khoa ở quận Hải Châu |Thống kê nha khoa ở Hải Châu |Thống kê nha khoa Hải Châu |Nha khoa Hải Châu - Đà Nẵng |Quận Hải Châu |Cho anh hỏi nha khoa ở Hải Châu |Cho mình hỏi các nha khoa ở Hải Châu |Hải Châu - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Hải Châu – Đà Nẵng  1. Nha khoa Rạng Ngời  Địa chỉ: 29 Nguyễn Hữu Thọ, Hải Châu, Đà Nẵng, Việt Nam  Số điện thoại: (0511) 3614 766  2. Trung tâm nha khoa Việt Khương  Địa chỉ: 207 Hùng Vương, Quận Hải Châu, TP. Đà Nẵng  Số điện thoại: (0511) 386 75 75  3. Nha khoa IDC DANANG  Địa chỉ: 203 Trần Phú, Quận Hải Châu, TP.Đà Nẵng.  Số điện thoại: 0511.388 6588  Email: dentalinfo@idcdanang.com  4. Phòng răng hàm mặt Bảo Phúc  Địa chỉ: 59 Hải Phòng, Quận Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3892302  5. Nha khoa thẩm mỹ Pasteur  Địa chỉ: 62 Pasteur, Quận Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3837442  6. Nha khoa Phan Dũng  Địa chỉ: 148 Hải Phòng, Quận Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3827729  7. Phòng khám nha khoa Minh Sanh  Địa chỉ: 476 Hoàng Diệu, Quận Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3550441  8. Phòng khám nha khoa Đông Tây Hội Ngộ  Địa chỉ: 22 Trần Bình Trọng, Q.Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3810319  9. Phòng khám nha khoa Bác Sĩ Hồng Minh  Địa chỉ: 97 Hải Phòng, Q.Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 389 1508  10. Nha khoa Lê Văn Hà  Địa chỉ: 198 Quang Trung, Quận Hải Châu, TP.Đà Nẵng.  11. Nha khoa Ngọc Tuyên  Địa chỉ: 102 Lý Tự Trọng, Q.Hải Châu, Thành phố Đà Nẵng.  Số điện thoại: (0511) 388 6747  12. Nha khoa Phương Đông  Địa chỉ: 41 Lê Hồng Phong, Quận Hải Châu, Thành phố Đà Nẵng.  Số điện thoại: (0511) 3821176  13. Nha khoa Phương Anh  Địa chỉ: 47 Trần Tổng, Q.Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3655669  14. Nha khoa Thanh Sơn  Địa chỉ: 390 Đống Đa, Q.Hải Châu, TP.Đà Nẵng.  Số điện thoại: (0511) 3886181  15. Nha khoa Minh Thu  Địa chỉ: 63 Phan Đăng Lưu, Q.Hải Châu, TP.Đà Nẵng.  Số điện thoại: 0905042048  16. Nha khoa Quang Tuấn  Địa chỉ: 35 Tiên Sơn 6, Phường Hòa Cường Nam, Q.Hải Châu, TP.Đà Nẵng.  17. Nha Khoa Vàng  Địa chỉ: 179 Lê Duẩn, Phường Thạch Thang, Q.Hải Châu, TP.Đà Nẵng.  18. Nha khoa Minh Phương  Địa chỉ: 64 Hải Hồ, P. Thanh Bình, Q.Hải Châu, TP.Đà N'),
-(15, '|Cho hỏi nha khoa ở quận Thanh Khê |Thanh Khê |Nha khoa ở Thanh Khê Đà Nẵng |Nha khoa Thanh Khê |Nha khoa ở Thanh Khê |Các nha khoa ở Thanh Khê |Nha khoa ở quận Thanh Khê |Thống kê nha khoa ở Thanh Khê |Thống kê nha khoa Thanh Khê |Nha khoa Thanh Khê - Đà Nẵng |Quận Thanh Khê |Cho anh hỏi nha khoa ở Thanh Khê |Cho mình hỏi các nha khoa ở Thanh Khê |Thanh Khê - Đà Nẵng', 'Danh Sách Nha Khoa Tốt Nhất Quận Thanh Khê – Đà Nẵng  1. Phòng răng Lâm Thanh Phong  Địa chỉ: 92 Thái Thị Bôi, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3649589  2. Phòng răng bác sĩ Tăng Kim Sinh  Địa chỉ: 279 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3891957  3. Nha Khoa Vũ Đình Châu  Địa chỉ: 50 Lý Thái Tổ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 383 7193  4. Trung tâm răng hàm mặt  Địa chỉ: 435 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3893079  5. Phòng khám nha khoa Tôn Thất Thắng  Địa chỉ: 197 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 3826398  6. Phòng khám nha khoa Vinh Sơn  Địa chỉ: 158 Ông Ích Khiêm, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 383 3056  7. Nha Khoa Việt Khương  Địa chỉ: 383 Điện Biên Phủ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Số điện thoại: (0511) 372 5888  8. Nha Khoa Đà Nẵng  Địa chỉ: 289 Hải Phòng, phường Tân Chính, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  9. Nha Khoa Nụ Cười Vàng  Địa chỉ: 365 Lê Duẩn, Phương Tân Chính, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  10. Nha Khoa Thẩm Mỹ Bác Sĩ Dung  Địa chỉ: 258 Trần Cao Vân, P. Tam Thuận, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  11. Nha Khoa Thanh Châu  Địa chỉ: 96 Ông Ích Khiêm, P.Tam Thuận, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  12. Nha Khoa Phan Dũng  Địa chỉ: 148A Hải Phòng, P.Tân Chính, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  13. Nha Khoa Hồng Hoa  Địa chỉ: 128 Hải Phòng, P.Tân Chính, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  14. Nha Khoa Thẩm Mỹ Dr.Long  Địa chỉ: 157 Hải Phòng, P.Tân Chính, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  15. Phòng Răng Tuyết Luận – Hà Huy Tập  Địa chỉ: 273 Hà Huy Tập, P.Chính Gián, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  16. Phòng Răng 635  Địa chỉ: 635 Điện Biên Phủ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  17. Phòng Răng Lê Hưng  Địa chỉ: 143 Điện Biên Phủ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  18. Nha Khoa Gia Đình Nguyễn Hoàng Hương  Địa chỉ: 408 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  19. Phòng Răng Nha Sĩ Mỹ Linh  Địa chỉ: 412 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  20. Trung tâm răng hàm mặt  Địa chỉ: 435 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  21. Nha Khoa Ngân Hà  Địa chỉ: 446 Lê Duẩn, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  22. Phòng Răng Thẩm Mỹ - Nguyễn Phước Nguyên  Địa chỉ: 164 Nguyễn Phước Nguyên, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  23. Nha Khoa 3D  Địa chỉ: 520 Trường Chinh, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  24. Nha Khoa Vũ Duy Hưng  Địa chỉ: 26 Hàm Nghi, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  25. Phòng Răng Nét Duyên  Địa chỉ: 119 Lê Độ, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  26. Phòng Răng Bảo An  Địa chỉ: 277 Trần Cao Vân, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam.  Trên đây là danh sách các nha khoa tốt nhất tại quận Thanh Khê, thành phố Đà Nẵng. Chúng tôi sẽ tiếp tục cập nhật khi có thêm địa chỉ mới.');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `chatbot`
---
-ALTER TABLE `chatbot`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `chatbot`
---
-ALTER TABLE `chatbot`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
