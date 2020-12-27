@@ -60,17 +60,33 @@
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li> 
                             <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
-                            <?php if(isset($_SESSION['user_id'])): ?>
-                                <?php 
-                                    $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));
-                                ?>
-                                <!-- <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> -->
-                                <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
-                                    <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
-                                    <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
-                                    </ul>
-                                </li>
+                            <?php if(isset($_SESSION['user_id']) && $_SESSION['role']==1): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
+                            <?php elseif(isset($_SESSION['user_id']) && $_SESSION['role']==2): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
+                            <?php elseif(isset($_SESSION['user_id']) && $_SESSION['role']==3): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
                                 <?php else : ?>
                                     <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
                                         <ul class="dropdown-menu">
@@ -160,6 +176,33 @@
                 <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i>Skype</a>
             </div>
     </section>
+
+    <!-- ================ LIÊN HỆ ================= -->  
+    <section class="hotline-area text-center area-padding" style="margin-top: 15px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Điên thoại tư vấn 24/7</h2>
+                        <span>(034)-7927070</span>
+                        <p class="pt-3">Chúng tôi sẵn sàng giúp bạn vượt qua khó khăn mặc cảm, hãy để chúng tôi cảm nhận và cùng bạn đánh bại chúng</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 5px;">
+                <a style="color: pink;text-align: center; font-size: 18px;" class="dn_btn" href="mailto:TuVanSucKhoe.@gmail.com"><i class=""></i>TuVanNhaKhoa@gmail.com</a>
+                <a style="color: yellow;margin-left: 5px;" href="https://www.facebook.com/T%C6%B0-v%E1%BA%A5n-nha-khoa-107003941234885"><i class="ti-facebook"></i></a>
+                <a style="color: yellow;margin-left: 5px;"  href="https://secure.skype.com/portal/overview"><i class="ti-skype"></i></a>
+            </div>
+     </section>
+    <!-- ================ Hotline Area End ================= -->  
+
+
+<!-- ====================================FOOTER -->
+
+<div class="footer" style="text-align: center; margin-bottom: 20px;">
+	<hr>
+	 Dịch vụ được hoàn hiện bởi | <a href="#" target="_blank">Team C1SE13</a>
+</div>
 
 
     <!-- Optional JavaScript -->

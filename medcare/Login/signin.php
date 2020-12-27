@@ -32,7 +32,7 @@
 <body>
 	
 	<div class="limiter">
-		<a style="font-size: 20px; color: purple; margin-top: 40px; margin-left: 120px;" class="navbar-brand logo_h" href="../index.php"><img src="../img/quan.png" alt="">Trang chủ</a>
+		<a style="font-size: 20px; color: purple; margin-top: 40px; margin-left: 120px;" class="navbar-brand logo_h" href="../index.php"><img src="../img/logo.png" alt="">Trang chủ</a>
 		<div class="container-login100" style="margin-top: -60px;">
 			<div class="wrap-login100 p-t-50 p-b-90">
 				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="../server/matchUser.php">

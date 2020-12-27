@@ -61,19 +61,33 @@
                             <li class="nav-item">
                                 <a href="hoidap.php" class="nav-link font">Tư vấn</a>
                             </li>          
-           
-                            <li class="nav-item"><a class="nav-link font" href="TinTuc.php">Tin tức</a></li> 
-                            <?php if(isset($_SESSION['user_id'])): ?>
-                                <?php 
-                                    $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));
-                                ?>
-                                <!-- <li class="nav-item"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a></li> -->
-                                <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
-                                    <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
-                                    <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
-                                    </ul>
-                                </li>
+                            <?php if(isset($_SESSION['user_id']) && $_SESSION['role']==1): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
+                            <?php elseif(isset($_SESSION['user_id']) && $_SESSION['role']==2): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
+                            <?php elseif(isset($_SESSION['user_id']) && $_SESSION['role']==3): ?>
+                                <?php $name=substr($_SESSION['user_name'],strrpos($_SESSION['user_name']," "));?>
+                                    <li class="nav-item submenu dropdown"><a href="userInfo.php" class="nav-link font" style="color: #780664">Hi <?php echo $name; ?> </a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a class="nav-link font" href="Login/changepass.php">Cập nhật thông tin</a></li>
+                                            <li class="nav-item"><a class="nav-link font" href="server/logout.php">Đăng xuất</a></li> 
+                                        </ul>
+                                    </li>
+                                <?php>
                                 <?php else : ?>
                                     <li class="nav-item submenu dropdown"><a href="#" class="nav-link dropdown-toggle font" data-toggle="dropdown"role="button" aria-haspopup="true" aria-expanded="false">Tài khoản</a>
                                         <ul class="dropdown-menu">
