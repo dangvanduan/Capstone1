@@ -416,11 +416,6 @@
 </div>
 
 
-
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-2.2.4.min.js"></script>

@@ -54,12 +54,13 @@
          <span>Quản lý người dùng-nha khoa</span></a>
       </li>
 
-       <li class="nav-item">
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
         <a class="nav-link collapsed" href="tables_danhmuc.php" >
           <i class="fas fa-fw fa-cog"></i>
           <span>Quản lý danh mục</span>
         </a>
-      
+
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
@@ -68,25 +69,9 @@
           <i class="fas fa-fw fa-wrench"></i>
           <span>Quản lý tin tức</span>
         </a>
-       
+
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Trang</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Màn hình đăng nhập</h6>
-            <a class="collapse-item" href="login.php">Đăng nhập</a>
-            <a class="collapse-item" href="register.php">Đăng ký</a>
-            <a class="collapse-item" href="forgot-password.php">Quên mật khẩu</a>
-            <div class="collapse-divider"></div>
-          
-          </div>
-        </div>
-      </li>
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">

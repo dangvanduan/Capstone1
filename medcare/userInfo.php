@@ -113,6 +113,20 @@
         </div>
         </div>
     </header>
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="Title_Banner">
+              <h2>Thông tin người dùng</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
     <section class="blog-area area-padding">
         <div class="container">
             <div class="Title_Banner row">

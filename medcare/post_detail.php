@@ -105,6 +105,19 @@
             </nav>
         </div>
     </header>
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="Title_Banner">
+              <h2>Danh sách nha khoa uy tín tại Đà Nẵng</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
 
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
